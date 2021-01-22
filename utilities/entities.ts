@@ -40,7 +40,7 @@
 		name: "Yen Sign",
 	},
 	{
-		symbol: "&copy;",
+		symbol: "©",
 		entity: "&copy;",
 		htmlCode: "&#169;",
 		cssCode: "\\00A9",
@@ -48,7 +48,7 @@
 		name: "Copyright Sign",
 	},
 	{
-		symbol: "&reg;",
+		symbol: "®",
 		entity: "&reg;",
 		htmlCode: "&#174;",
 		cssCode: "\\00AE",
@@ -56,7 +56,7 @@
 		name: "Registered Sign",
 	},
 	{
-		symbol: "&trade;",
+		symbol: "™",
 		entity: "&trade;",
 		htmlCode: "&#8482;",
 		cssCode: "\\2122",
@@ -416,7 +416,7 @@
 		name: "White Star",
 	},
 	{
-		symbol: "&phone;",
+		symbol: "☎",
 		entity: "&phone;",
 		htmlCode: "&#9742;",
 		cssCode: "\\260E",
@@ -424,7 +424,7 @@
 		name: "Black Telephone",
 	},
 	{
-		symbol: "&female;",
+		symbol: "♀",
 		entity: "&female;",
 		htmlCode: "&#9792;",
 		cssCode: "\\2640",
@@ -432,7 +432,7 @@
 		name: "Female Sign",
 	},
 	{
-		symbol: "&male;",
+		symbol: "⚦",
 		entity: "&male;",
 		htmlCode: "&#9794;",
 		cssCode: "\\2642",
@@ -440,7 +440,7 @@
 		name: "Male Sign",
 	},
 	{
-		symbol: "&spades;",
+		symbol: "♠️",
 		entity: "&spades;",
 		htmlCode: "&#9824;",
 		cssCode: "\\2660",
@@ -448,7 +448,7 @@
 		name: "Black Spade Suit",
 	},
 	{
-		symbol: "&clubs;",
+		symbol: "♣️",
 		entity: "&clubs;",
 		htmlCode: "&#9827;",
 		cssCode: "\\2663",
@@ -456,7 +456,7 @@
 		name: "Black Club Suit",
 	},
 	{
-		symbol: "&hearts;",
+		symbol: "❤️",
 		entity: "&hearts;",
 		htmlCode: "&#9829;",
 		cssCode: "\\2665",
@@ -464,7 +464,7 @@
 		name: "Black Heart Suit",
 	},
 	{
-		symbol: "&diams;",
+		symbol: "♦️",
 		entity: "&diams;",
 		htmlCode: "&#9830;",
 		cssCode: "\\2666",
@@ -5247,7 +5247,7 @@
 		name: "Latin Small Letter Z with Caron",
 	},
 	{
-		symbol: "&DownBreve;",
+		symbol: " ̑",
 		entity: "&DownBreve;",
 		htmlCode: "&#785;",
 		cssCode: "\\0311",
@@ -5887,7 +5887,7 @@
 		name: "South West Arrow and North West Arrow",
 	},
 	{
-		symbol: "&cudarrr;",
+		symbol: "⤵",
 		entity: "&cudarrr;",
 		htmlCode: "&#10549;",
 		cssCode: "\\2935",

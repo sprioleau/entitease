@@ -15,10 +15,10 @@ const Home = () => {
 					{entities.map(({ symbol, entity, htmlCode, cssCode, unicode, name }) => (
 						<li key={`${name}-${htmlCode}`} className="entities-list__item">
 							<h3>{symbol} </h3>
-							<h4>{name} </h4>
-							<p>{entity}</p>
-							<p>{htmlCode}</p>
-							<p>{cssCode}</p>
+							<h4>Name: {name} </h4>
+							<p>Entity: {entity}</p>
+							<p>HTML Code: {htmlCode}</p>
+							<p>CSS Code: {cssCode}</p>
 							<p>{unicode}</p>
 						</li>
 					))}
