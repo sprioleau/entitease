@@ -1,0 +1,45 @@
+.entities-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: $grid-gap;
+	padding: calc(#{$grid-gap} / 2);
+
+	&__item {
+		background-color: rgba(0, 0, 0, 0.2);
+		padding: 1rem 1.5rem;
+		text-align: center;
+		flex: 1 1 200px;
+
+		p {
+			margin: 0 0 0.25rem;
+		}
+	}
+
+	&__item-label {
+		padding: 0.25rem 0.5rem;
+		margin: 0 0 0.25rem;
+
+		&:hover {
+			cursor: pointer;
+		}
+
+		&:not(.symbol):hover {
+			background-color: rgba($black, 0.8);
+			color: white;
+		}
+
+		&.no-copy:hover {
+			cursor: default;
+			background-color: transparent;
+			color: currentColor;
+		}
+
+		&.symbol {
+			font-size: 3rem;
+		}
+	}
+
+	.icon {
+		font-size: 2rem;
+	}
+}

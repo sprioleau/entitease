@@ -2,6 +2,9 @@ body {
 	font-family: Avenir, "Helvetica Neue", sans-serif;
 }
 
+// Variables
+$black: #000;
+
 $grid-gap: 1rem;
 
 ul,
@@ -9,31 +12,4 @@ li {
 	margin: 0;
 	padding: 0;
 	list-style: none;
-}
-
-.entities-list {
-	display: flex;
-	flex-wrap: wrap;
-	gap: $grid-gap;
-	padding: calc(#{$grid-gap} / 2);
-
-	&__item {
-		background-color: rgba(0, 0, 0, 0.2);
-		padding: 1rem 1.5rem;
-		text-align: center;
-		flex: 1 1 200px;
-
-		p {
-			margin: 0 0 0.25rem;
-		}
-
-		h3,
-		h4 {
-			margin: 0 0 0.25rem;
-		}
-
-		h3 {
-			font-size: 3rem;
-		}
-	}
 }

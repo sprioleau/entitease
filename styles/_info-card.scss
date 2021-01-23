@@ -1,0 +1,14 @@
+.info-card {
+	max-width: 550px;
+	background-color: #fff;
+	padding: 1.5rem 3rem;
+	display: grid;
+	place-items: center;
+	text-align: center;
+}
+
+.copy {
+	&:hover {
+		cursor: pointer;
+	}
+}
