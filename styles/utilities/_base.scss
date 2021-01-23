@@ -1,0 +1,21 @@
+$grid-gap: 1rem;
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: $ff;
+	color: $yellow;
+	background-image: url("../../images/bg.svg");
+}
+
+ul,
+li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}

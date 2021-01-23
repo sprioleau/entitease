@@ -1,9 +1,12 @@
 // Utilities
-@import "mixins";
-@import "base";
-@import "modal";
-@import "icon";
+@import "utilities/variables";
+@import "utilities/typography";
+@import "utilities/mixins";
+@import "utilities/base";
+@import "utilities/modal";
+@import "utilities/icon";
 
 //  Components
-@import "info-card";
-@import "entities-list";
+@import "components/banner";
+@import "components/info-card";
+@import "components/entities-list";

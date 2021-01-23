@@ -1,0 +1,8 @@
+.banner {
+	@include center;
+
+	&__page-title {
+		font-size: 3rem;
+		font-family: $space;
+	}
+}

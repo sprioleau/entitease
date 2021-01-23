@@ -3,6 +3,7 @@ import store from "../state-provider/store";
 import Head from "next/head";
 import ModalTarget from "../components/ModalTarget";
 import EntitiesList from "../components/EntitiesList";
+import Banner from "../components/Banner";
 
 const Home = () => {
 	return (
@@ -14,7 +15,7 @@ const Home = () => {
 
 			<ModalTarget />
 			<main>
-				<h1>Entitease</h1>
+				<Banner />
 				<EntitiesList />
 			</main>
 		</Provider>

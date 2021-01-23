@@ -1,0 +1,33 @@
+@font-face {
+	font-family: "Noto Sans";
+	src: url("../../fonts/NotoSans-Regular.ttf");
+}
+
+@font-face {
+	font-family: "Noto Sans Bold";
+	src: url("../../fonts/NotoSans-Bold.ttf");
+}
+
+@font-face {
+	font-family: "Roboto Regular";
+	src: url("../../fonts/Roboto-Regular.ttf");
+}
+
+@font-face {
+	font-family: "Roboto Bold";
+	src: url("../../fonts/Roboto-Bold.ttf");
+}
+
+@font-face {
+	font-family: "Space Mono";
+	src: url("../../fonts/SpaceMono-Regular.ttf");
+}
+
+// Primary font
+$ff: "Roboto Regular", Avenir, "Helvetica Neue", sans-serif;
+$ff-bold: "Roboto Bold", Avenir, "Helvetica Neue", sans-serif;
+$ffs: "Noto Sans", monospace;
+$ffs-bold: "Noto Sans Bold", monospace;
+
+// Monospace fonts
+$space: "Space Mono", monospace;
