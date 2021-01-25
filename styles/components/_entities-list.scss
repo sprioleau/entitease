@@ -1,10 +1,11 @@
 .entities-list {
 	@include border;
+	// flex: 1 0;
+	grid-area: entities;
 	position: relative;
 	top: 0;
 	height: calc(100% - 2 * #{$border-outline-width});
 	overflow-y: scroll;
-	flex: 1 0;
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 	gap: $border-outline-width;
@@ -30,22 +31,27 @@
 		p {
 			margin: 0 0 0.25rem;
 		}
+	}
+
+	&__navigation {
+		@include outline;
+		position: absolute;
+		border-top: none;
+		border-right: none;
+		top: 0;
+		right: 0;
+		width: 3rem;
+		height: 3rem;
+		background-color: $black;
+
+		&:hover {
+			background-color: darken($black, 10%);
+		}
 
 		.arrow-icon-link {
-			@include outline;
-			border-top: none;
-			border-right: none;
 			@include center;
-			position: absolute;
-			top: 0;
-			right: 0;
-			width: 3rem;
-			height: 3rem;
-			background-color: $black;
-
-			&:hover {
-				background-color: darken($black, 10%);
-			}
+			height: 100%;
+			width: 100%;
 		}
 
 		.icon {
@@ -90,5 +96,24 @@
 			font-size: 3rem;
 			height: 4rem;
 		}
+	}
+}
+
+@include sm {
+	.entities-list {
+		grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+
+		&__positioner {
+			padding: 1rem;
+		}
+
+		&__labels {
+			margin-bottom: 3rem;
+		}
+
+		// &__navigation {
+		// 	width: 100%;
+		// 	bottom: 3rem;
+		// }
 	}
 }

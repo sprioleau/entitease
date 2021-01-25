@@ -3,6 +3,8 @@
 	border-left: $border-outline-width solid $yellow;
 	height: 100%;
 	flex-direction: column;
+	grid-area: banner;
+	background-image: url("../../images/bg.svg");
 
 	&__page-title {
 		@include center;
@@ -18,10 +20,10 @@
 	}
 
 	&__footer {
-		border-bottom: $border-outline-width solid $yellow;
 		@include center;
-		width: 100%;
 		flex-direction: column;
+		border-bottom: $border-outline-width solid $yellow;
+		width: 100%;
 		flex: 0 0;
 		padding: 3rem 1rem;
 
@@ -61,6 +63,45 @@
 		&-byline {
 			@include center;
 			flex-direction: column;
+		}
+	}
+}
+
+@include sm {
+	.banner {
+		@include border;
+		margin-top: -#{$border-outline-width};
+
+		&__page-title {
+			display: none;
+		}
+
+		a {
+			margin-bottom: 0;
+		}
+
+		&__footer {
+			padding: 1rem;
+			justify-content: unset;
+
+			a {
+				margin-bottom: 0;
+			}
+
+			&-links {
+				flex-direction: row;
+				margin-bottom: 0;
+				flex: 0 0;
+			}
+
+			&-link:not(:last-child) {
+				margin-right: 1rem;
+			}
+
+			&-byline {
+				display: block;
+				align-items: center;
+			}
 		}
 	}
 }

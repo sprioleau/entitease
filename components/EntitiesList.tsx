@@ -20,24 +20,28 @@ const EntitiesList = () => {
 			{entities.map((entity) => (
 				<li key={`${entity.name}-${entity.htmlCode}`} className="entities-list__item">
 					<div className="entities-list__positioner">
-						{Object.keys(entityDisplayValues).map((key) => (
-							<LabelWithCopy
-								key={key}
-								label={`${entityDisplayValues[key].label}${entity[key]}`}
-								tag={entityDisplayValues[key].tag}
-								addClass={entityDisplayValues[key].addClass}
-								textToCopy={entity[key]}
-								copy={entityDisplayValues[key].copy}
-								blank={entity.blank}
+						<div className="entities-list__labels">
+							{Object.keys(entityDisplayValues).map((key) => (
+								<LabelWithCopy
+									key={key}
+									label={`${entityDisplayValues[key].label}${entity[key]}`}
+									tag={entityDisplayValues[key].tag}
+									addClass={entityDisplayValues[key].addClass}
+									textToCopy={entity[key]}
+									copy={entityDisplayValues[key].copy}
+									blank={entity.blank}
+								/>
+							))}
+						</div>
+						<div className="entities-list__navigation">
+							<Icon
+								link
+								to={`/symbol/${dashString(entity.name)}`}
+								addClass="arrow-icon"
+								size="md"
+								icon={<GrFormNextLink />}
 							/>
-						))}
-						<Icon
-							link
-							to={`/symbol/${dashString(entity.name)}`}
-							addClass="arrow-icon"
-							size="md"
-							icon={<GrFormNextLink />}
-						/>
+						</div>
 					</div>
 				</li>
 			))}
