@@ -440,7 +440,7 @@
 		name: "Male Sign",
 	},
 	{
-		symbol: "♠️",
+		symbol: "♠",
 		entity: "&spades;",
 		htmlCode: "&#9824;",
 		cssCode: "\\2660",
@@ -448,7 +448,7 @@
 		name: "Black Spade Suit",
 	},
 	{
-		symbol: "♣️",
+		symbol: "♣",
 		entity: "&clubs;",
 		htmlCode: "&#9827;",
 		cssCode: "\\2663",
@@ -456,7 +456,7 @@
 		name: "Black Club Suit",
 	},
 	{
-		symbol: "❤️",
+		symbol: "♥",
 		entity: "&hearts;",
 		htmlCode: "&#9829;",
 		cssCode: "\\2665",
@@ -760,11 +760,13 @@
 		name: "Modifier Letter Circumflex Accent",
 	},
 	{
+		symbol: " ",
 		entity: "&nbsp;",
 		htmlCode: "&#160;",
 		cssCode: "\\00A0",
 		unicode: "U+00A0",
 		name: "No-Break Space",
+		blank: true,
 	},
 	{
 		symbol: " ",
@@ -773,6 +775,7 @@
 		cssCode: "\\2002",
 		unicode: "U+2002",
 		name: "En Space",
+		blank: true,
 	},
 	{
 		symbol: " ",
@@ -781,6 +784,7 @@
 		cssCode: "\\2003",
 		unicode: "U+2003",
 		name: "Em Space",
+		blank: true,
 	},
 	{
 		symbol: " ",
@@ -789,6 +793,7 @@
 		cssCode: "\\2009",
 		unicode: "U+2009",
 		name: "Thin Space",
+		blank: true,
 	},
 	{
 		symbol: "‌",
@@ -797,6 +802,7 @@
 		cssCode: "\\200C",
 		unicode: "U+200C",
 		name: "Zero Width Non-Joiner",
+		blank: true,
 	},
 	{
 		symbol: "‍",
@@ -805,6 +811,7 @@
 		cssCode: "\\200D",
 		unicode: "U+200D",
 		name: "Zero Width Joiner",
+		blank: true,
 	},
 	{
 		symbol: "‎",
@@ -813,6 +820,7 @@
 		cssCode: "\\200E",
 		unicode: "U+200E",
 		name: "Left-To-Right Mark",
+		blank: true,
 	},
 	{
 		symbol: "‏",
@@ -821,6 +829,7 @@
 		cssCode: "\\200F",
 		unicode: "U+200F",
 		name: "Right-To-Left Mark",
+		blank: true,
 	},
 	{
 		symbol: "¡",
@@ -877,6 +886,7 @@
 		cssCode: "\\00AD",
 		unicode: "U+00AD",
 		name: "Soft Hyphen",
+		blank: true,
 	},
 	{
 		symbol: "¯",

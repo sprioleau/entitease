@@ -2,6 +2,7 @@ import useClipboard from "react-use-clipboard";
 import { toggleModalVisibility } from "../state-provider/actionCreators";
 import { useDispatch } from "react-redux";
 import InfoCard from "./InfoCard";
+import { composeClasses } from "../utilities/utilityFunctions";
 
 // https://stackoverflow.com/questions/55969769/typing-a-dynamic-tag-in-react-with-typescript
 
@@ -11,6 +12,7 @@ interface PropTypes {
 	addClass: string;
 	textToCopy: string;
 	copy: boolean;
+	blank: boolean;
 }
 
 const LabelWithCopy: React.FunctionComponent<PropTypes & React.HTMLAttributes<HTMLOrSVGElement>> = ({
@@ -19,6 +21,7 @@ const LabelWithCopy: React.FunctionComponent<PropTypes & React.HTMLAttributes<HT
 	addClass,
 	textToCopy,
 	copy,
+	blank,
 }) => {
 	const [isCopied, setCopied] = useClipboard(textToCopy);
 	const dispatch = useDispatch();
@@ -31,8 +34,15 @@ const LabelWithCopy: React.FunctionComponent<PropTypes & React.HTMLAttributes<HT
 
 	const CustomTag = `${tag}`;
 
+	const listItemClasses = {
+		"entities-list__item-label": "",
+		[addClass]: addClass ? true : null,
+		"no-copy": !copy,
+		blank,
+	};
+
 	return (
-		<CustomTag className={`entities-list__item-label ${addClass} ${copy ? "" : "no-copy"}`} onClick={handleCopy}>
+		<CustomTag className={composeClasses(listItemClasses)} onClick={handleCopy}>
 			{label}
 		</CustomTag>
 	);

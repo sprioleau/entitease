@@ -3,6 +3,8 @@ $bp-small: 576px;
 $bp-medium: 850px;
 $bp-large: 1180px;
 
+$border-outline-width: 0.5rem;
+
 @mixin center {
 	display: flex;
 	justify-content: center;
@@ -29,4 +31,16 @@ $bp-large: 1180px;
 	@media (max-width: #{$bp-large}) {
 		@content;
 	}
+}
+
+@mixin outline {
+	outline: $border-outline-width solid $yellow;
+}
+
+@mixin border {
+	border: $border-outline-width solid $yellow;
+}
+
+@mixin shadow($color: $black) {
+	box-shadow: 1.25rem 1.25rem 0 0 rgba(darken($color, 10%), 0.4);
 }

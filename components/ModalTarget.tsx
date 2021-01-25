@@ -3,6 +3,7 @@ import { selectModalContent } from "../state-provider/selectors";
 
 const ModalTarget = () => {
 	const modalContent = useSelector(selectModalContent);
+
 	return <>{modalContent && <div className="modal">{modalContent}</div>}</>;
 };
 

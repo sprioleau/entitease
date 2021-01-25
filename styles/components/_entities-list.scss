@@ -1,32 +1,82 @@
 .entities-list {
-	display: flex;
-	flex-wrap: wrap;
-	gap: $grid-gap;
-	padding: $grid-gap;
+	@include border;
+	position: relative;
+	top: 0;
+	height: calc(100% - 2 * #{$border-outline-width});
+	overflow-y: scroll;
+	flex: 1 0;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: $border-outline-width;
+	z-index: 1;
+
+	&__positioner {
+		@include center;
+		flex-direction: column;
+		padding: 1rem 1.5rem;
+		position: relative;
+	}
 
 	&__item {
+		@include outline;
+		@include transition(background-color);
 		background-color: $black;
-		border: 4px solid $yellow;
-		padding: 1rem 1.5rem;
 		text-align: center;
-		flex: 1 1 200px;
+
+		&:hover {
+			background-color: darken($black, 5%);
+		}
 
 		p {
 			margin: 0 0 0.25rem;
+		}
+
+		.arrow-icon-link {
+			@include outline;
+			border-top: none;
+			border-right: none;
+			@include center;
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 3rem;
+			height: 3rem;
+			background-color: $black;
+
+			&:hover {
+				background-color: darken($black, 10%);
+			}
+		}
+
+		.icon {
+			font-size: 2rem;
+
+			path {
+				stroke: $yellow;
+			}
 		}
 	}
 
 	&__item-label {
 		padding: 0.25rem 0.5rem;
-		margin: 0 0 0.25rem;
+		margin: 0;
+		font-family: $space;
+		font-size: 0.9rem;
+		line-height: 1.2;
 
 		&:hover {
-			cursor: pointer;
+			cursor: copy;
 		}
 
 		&:not(.symbol):hover {
 			background-color: rgba($black, 0.8);
 			color: white;
+		}
+
+		&.name {
+			font-family: $ffs;
+			font-size: 1.2rem;
+			margin-bottom: 0.5rem;
 		}
 
 		&.no-copy:hover {
@@ -36,15 +86,9 @@
 		}
 
 		&.symbol {
+			font-family: $ff;
 			font-size: 3rem;
-		}
-	}
-
-	.icon {
-		font-size: 2rem;
-
-		path {
-			stroke: $yellow;
+			height: 4rem;
 		}
 	}
 }

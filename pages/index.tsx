@@ -14,7 +14,7 @@ const Home = () => {
 			</Head>
 
 			<ModalTarget />
-			<main>
+			<main className="main-content">
 				<Banner />
 				<EntitiesList />
 			</main>

@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { composeClasses } from "../utilities/utilityFunctions";
 
-const Icon = ({ icon, addClass, link, to, size }) => {
+const Icon = ({ icon, addClass, link, to, size }): any => {
 	const iconClasses = {
 		icon: "",
 		[size]: size ? true : null,
@@ -13,7 +13,7 @@ const Icon = ({ icon, addClass, link, to, size }) => {
 
 	return link ? (
 		<Link href={to}>
-			<a>{embeddedIcon}</a>
+			<a className={`${addClass}-link`}>{embeddedIcon}</a>
 		</Link>
 	) : (
 		{ embeddedIcon }
