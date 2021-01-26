@@ -1,4 +1,4 @@
-export const dashString = (string: string) => string.trim().toLowerCase().replace(" ", "-");
+export const dashString = (string: string) => string.trim().toLowerCase().replace(" ", "-").replace("  ", "-");
 
 export const composeClasses = (classesObject) => {
 	const classList = Object.entries(classesObject);

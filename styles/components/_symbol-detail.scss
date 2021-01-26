@@ -14,13 +14,19 @@
 		background-color: $black;
 		@include center;
 		flex-direction: column;
+		text-align: center;
+		padding: 1rem;
+	}
+
+	& > .symbol-label__back {
+		padding: 0;
 	}
 
 	&__symbol {
 		grid-area: symbol;
 
 		&-mark {
-			font-size: 30vh;
+			font-size: calc(30vw + 8rem);
 			line-height: 1;
 			margin: 0;
 
@@ -30,7 +36,7 @@
 		}
 
 		.name {
-			font-size: 5vh;
+			font-size: calc(1.25vw + 2.5rem);
 		}
 	}
 
