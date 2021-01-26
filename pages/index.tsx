@@ -9,17 +9,19 @@ import Footer from "../components/Footer";
 const Home = () => {
 	return (
 		<Provider store={store}>
-			<Head>
-				<title>Entitease | Find your symbols with ease</title>
-				<link rel="icon" href="/favicon.ico" />
-			</Head>
+			<div className="app">
+				<Head>
+					<title>Entitease | Find your symbols with ease</title>
+					<link rel="icon" href="/favicon.ico" />
+				</Head>
 
-			<ModalTarget />
-			<main className="main-content">
-				<Banner />
-				<Footer />
-				<EntitiesList />
-			</main>
+				<ModalTarget />
+				<main className="main-content">
+					<Banner />
+					<Footer />
+					<EntitiesList />
+				</main>
+			</div>
 		</Provider>
 	);
 };

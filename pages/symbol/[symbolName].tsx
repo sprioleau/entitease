@@ -21,18 +21,20 @@ const Symbol = () => {
 
 	return (
 		<Provider store={store}>
-			<Head>
-				<title>{entity.name}</title>
-				<link rel="icon" href="/favicon.ico" />
-			</Head>
+			<div className="app">
+				<Head>
+					<title>{entity.name}</title>
+					<link rel="icon" href="/favicon.ico" />
+				</Head>
 
-			<ModalTarget />
+				<ModalTarget />
 
-			<main className="main-content">
-				<Banner />
-				<Footer />
-				<SymbolDetail entity={entity} />
-			</main>
+				<main className="main-content">
+					<Banner />
+					<Footer />
+					<SymbolDetail entity={entity} />
+				</main>
+			</div>
 		</Provider>
 	);
 };

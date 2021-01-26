@@ -32,9 +32,9 @@
 			line-height: 1;
 			margin: 2rem 0 0;
 
-			&:hover {
-				cursor: copy;
-			}
+			// &:hover {
+			// 	cursor: copy;
+			// }
 		}
 
 		.name {
@@ -48,7 +48,7 @@
 		margin-bottom: 0.5rem;
 
 		&:hover {
-			cursor: copy;
+			// cursor: copy;
 			background-color: darken($black, 10%);
 		}
 	}

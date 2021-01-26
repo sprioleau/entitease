@@ -1,6 +1,6 @@
 import entities from "../utilities/entities";
 import LabelWithCopy from "../components/LabelWithCopy";
-import { GrFormNextLink } from "react-icons/gr";
+// import { GrFormNextLink } from "react-icons/gr";
 import { dashString } from "../utilities/utilityFunctions";
 import Icon from "./Icon";
 
@@ -40,7 +40,7 @@ const EntitiesList = () => {
 								to={`/symbol/${dashString(entity.name)}`}
 								addClass="arrow-icon"
 								size="md"
-								icon={<GrFormNextLink />}
+								icon={<ArrowIcon />}
 							/>
 						</div>
 					</div>
@@ -49,5 +49,17 @@ const EntitiesList = () => {
 		</ul>
 	);
 };
+
+const ArrowIcon = () => (
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		viewBox="0 0 215.27 215.27"
+		width="100%"
+		height="100%"
+		className="icon arrow-icon"
+	>
+		<path d="M215.27,0V215.27H165.12V85.61L38,212.73,2.54,177.27,129.66,50.15H0V0Z" fill="#f5bf16" />
+	</svg>
+);
 
 export default EntitiesList;
