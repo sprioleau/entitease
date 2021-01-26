@@ -14,7 +14,7 @@ const Symbol = () => {
 	const router = useRouter();
 	const { symbolName } = router.query;
 
-	const entity = entities.find((entity) => dashString(entity.name) === symbolName);
+	const entity = entities.find((entity) => dashString(entity?.name) === symbolName);
 
 	return (
 		<Provider store={store}>
