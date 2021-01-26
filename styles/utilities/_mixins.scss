@@ -33,6 +33,12 @@ $border-outline-width: 0.5rem;
 	}
 }
 
+@mixin above-lg {
+	@media only screen and (min-width: #{$bp-large}) {
+		@content;
+	}
+}
+
 @mixin outline {
 	outline: $border-outline-width solid $yellow;
 }

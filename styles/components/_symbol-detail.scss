@@ -1,6 +1,8 @@
 .symbol-detail {
 	grid-area: entities;
 	display: grid;
+	overflow-y: scroll;
+	overflow-x: hidden;
 	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: 1fr 1fr $footer-height;
 	grid-template-areas:
@@ -28,7 +30,7 @@
 		&-mark {
 			font-size: calc(30vw + 8rem);
 			line-height: 1;
-			margin: 0;
+			margin: 2rem 0 0;
 
 			&:hover {
 				cursor: copy;
@@ -41,7 +43,7 @@
 	}
 
 	&__key {
-		font-size: 3rem;
+		font-size: calc(0.8vw + 2rem);
 		padding: 0.25rem 1rem;
 		margin-bottom: 0.5rem;
 
@@ -91,5 +93,29 @@
 			height: calc(100% - 2 * #{$padding});
 			width: calc(100% - 2 * #{$padding});
 		}
+	}
+}
+
+@include md {
+	.symbol-detail {
+		grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+		grid-template-rows: 2fr 1fr 1fr $footer-height;
+		grid-template-areas:
+			"symbol symbol "
+			"entity unicode"
+			"html   css    "
+			"back   back   ";
+	}
+}
+
+@mixin above-lg {
+	.symbol-detail__symbol-mark {
+		font-size: 4rem;
+	}
+}
+
+@media only screen and (min-width: 1180px) {
+	.symbol-detail__symbol-mark {
+		font-size: 40rem;
 	}
 }
