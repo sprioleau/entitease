@@ -4,6 +4,7 @@ import Head from "next/head";
 import ModalTarget from "../components/ModalTarget";
 import EntitiesList from "../components/EntitiesList";
 import Banner from "../components/Banner";
+import Footer from "../components/Footer";
 
 const Home = () => {
 	return (
@@ -16,6 +17,7 @@ const Home = () => {
 			<ModalTarget />
 			<main className="main-content">
 				<Banner />
+				<Footer />
 				<EntitiesList />
 			</main>
 		</Provider>

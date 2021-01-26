@@ -26,6 +26,7 @@ const EntitiesList = () => {
 									key={key}
 									label={`${entityDisplayValues[key].label}${entity[key]}`}
 									tag={entityDisplayValues[key].tag}
+									className="entities-list__item-label"
 									addClass={entityDisplayValues[key].addClass}
 									textToCopy={entity[key]}
 									copy={entityDisplayValues[key].copy}

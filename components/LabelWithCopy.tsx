@@ -9,15 +9,17 @@ import { composeClasses } from "../utilities/utilityFunctions";
 interface PropTypes {
 	tag: keyof JSX.IntrinsicElements;
 	label: string;
-	addClass: string;
+	className?: string;
+	addClass?: string;
 	textToCopy: string;
 	copy: boolean;
-	blank: boolean;
+	blank?: boolean;
 }
 
 const LabelWithCopy: React.FunctionComponent<PropTypes & React.HTMLAttributes<HTMLOrSVGElement>> = ({
 	label,
 	tag,
+	className,
 	addClass,
 	textToCopy,
 	copy,
@@ -35,7 +37,7 @@ const LabelWithCopy: React.FunctionComponent<PropTypes & React.HTMLAttributes<HT
 	const CustomTag = `${tag}`;
 
 	const listItemClasses = {
-		"entities-list__item-label": "",
+		[className]: className ? true : null,
 		[addClass]: addClass ? true : null,
 		"no-copy": !copy,
 		blank,

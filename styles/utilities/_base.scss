@@ -26,19 +26,26 @@ li {
 
 // Layout
 .main-content {
+	@include border;
+	height: calc(100vh - 2 * #{$border-outline-width});
+	width: calc(100vw - 2 * #{$border-outline-width});
 	display: grid;
-	height: 100vh;
-	width: 100%;
+	gap: $border-outline-width;
+	background-color: $yellow;
+	// width: 100%;
 
-	grid-template-columns: 200px 1fr;
-	grid-template-rows: 1fr;
-	grid-template-areas: "banner entities";
+	grid-template-columns: auto 1fr;
+	grid-template-rows: 1fr $footer-height;
+	grid-template-areas:
+		"banner entities"
+		"footer entities";
 
 	@include sm {
 		grid-template-columns: 1fr;
-		grid-template-rows: 1fr 100px;
+		grid-template-rows: 1fr auto auto;
 		grid-template-areas:
+			"banner"
 			"entities"
-			"banner";
+			"footer";
 	}
 }

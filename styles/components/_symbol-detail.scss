@@ -1,0 +1,89 @@
+.symbol-detail {
+	grid-area: entities;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: 1fr 1fr $footer-height;
+	grid-template-areas:
+		"symbol symbol entity   "
+		"symbol symbol unicode "
+		"html   css    back";
+	gap: $border-outline-width;
+	background-color: $yellow;
+
+	& > * {
+		background-color: $black;
+		@include center;
+		flex-direction: column;
+	}
+
+	&__symbol {
+		grid-area: symbol;
+
+		&-mark {
+			font-size: 30vh;
+			line-height: 1;
+			margin: 0;
+
+			&:hover {
+				cursor: copy;
+			}
+		}
+
+		.name {
+			font-size: 5vh;
+		}
+	}
+
+	&__key {
+		font-size: 3rem;
+		padding: 0.25rem 1rem;
+		margin-bottom: 0.5rem;
+
+		&:hover {
+			cursor: copy;
+			background-color: darken($black, 10%);
+		}
+	}
+
+	&__label {
+		font-size: 1rem;
+	}
+
+	&__entity {
+		grid-area: entity;
+	}
+
+	&__html {
+		grid-area: html;
+	}
+
+	&__css {
+		grid-area: css;
+	}
+
+	&__unicode {
+		grid-area: unicode;
+	}
+
+	&__back {
+		grid-area: back;
+
+		&:hover {
+			background-color: darken($black, 10%);
+		}
+
+		a {
+			display: block;
+			height: 100%;
+			width: 100%;
+		}
+
+		$padding: 2rem;
+
+		&-arrow {
+			padding: $padding;
+			height: calc(100% - 2 * #{$padding});
+			width: calc(100% - 2 * #{$padding});
+		}
+	}
+}

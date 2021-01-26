@@ -1,16 +1,12 @@
 .banner {
 	@include center;
-	border-left: $border-outline-width solid $yellow;
-	height: 100%;
-	flex-direction: column;
 	grid-area: banner;
+	flex-direction: column;
 	background-image: url("../../images/bg.svg");
 
 	&__page-title {
 		@include center;
 		width: 105%;
-		border-bottom: $border-outline-width solid $yellow;
-		border-top: $border-outline-width solid $yellow;
 		flex: 1 0;
 		font-size: 3rem;
 		font-family: $space;
@@ -18,90 +14,15 @@
 		writing-mode: vertical-rl;
 		transform: rotate(180deg);
 	}
-
-	&__footer {
-		@include center;
-		flex-direction: column;
-		border-bottom: $border-outline-width solid $yellow;
-		width: 100%;
-		flex: 0 0;
-		padding: 3rem 1rem;
-
-		a {
-			color: $yellow;
-			text-decoration: none;
-			margin-bottom: 0.5rem;
-			display: block;
-			position: relative;
-			padding: 0.25rem;
-
-			&::after {
-				@include transition(transform);
-				position: absolute;
-				content: "";
-				height: 0.25rem;
-				width: 100%;
-				background-color: $yellow;
-				left: 50%;
-				bottom: -0.25rem;
-				transform: translateX(-50%) scaleX(0);
-				transform-origin: right;
-			}
-
-			&:hover::after {
-				transform: translateX(-50%) scaleX(1);
-				transform-origin: left;
-			}
-		}
-
-		&-links {
-			@include center;
-			flex-direction: column;
-			margin-bottom: 2rem;
-		}
-
-		&-byline {
-			@include center;
-			flex-direction: column;
-		}
-	}
 }
 
 @include sm {
 	.banner {
-		@include border;
-		margin-top: -#{$border-outline-width};
-
 		&__page-title {
-			display: none;
-		}
-
-		a {
-			margin-bottom: 0;
-		}
-
-		&__footer {
-			padding: 1rem;
-			justify-content: unset;
-
-			a {
-				margin-bottom: 0;
-			}
-
-			&-links {
-				flex-direction: row;
-				margin-bottom: 0;
-				flex: 0 0;
-			}
-
-			&-link:not(:last-child) {
-				margin-right: 1rem;
-			}
-
-			&-byline {
-				display: block;
-				align-items: center;
-			}
+			writing-mode: horizontal-tb;
+			transform: rotate(0);
+			font-size: 1.8rem;
+			line-height: 1;
 		}
 	}
 }
