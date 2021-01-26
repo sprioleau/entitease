@@ -5,4 +5,5 @@ export interface Entity {
 	cssCode: string;
 	unicode: string;
 	name: string;
+	blank?: boolean;
 }

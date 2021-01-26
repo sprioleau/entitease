@@ -9,12 +9,16 @@ import LabelWithCopy from "../../components/LabelWithCopy";
 import Banner from "../../components/Banner";
 import Footer from "../../components/Footer";
 import ModalTarget from "../../components/ModalTarget";
+import { Entity } from "../../types/types";
 
 const Symbol = () => {
 	const router = useRouter();
 	const { symbolName } = router.query;
+	console.log("symbolName:", symbolName);
 
-	const entity = entities.find((entity) => dashString(entity?.name) === symbolName);
+	if (!symbolName) return null; // useRouter hook returns undefined on first render.
+
+	const entity: Entity = entities.find((entity) => dashString(entity.name) === symbolName);
 
 	return (
 		<Provider store={store}>
@@ -37,6 +41,7 @@ const Symbol = () => {
 export default Symbol;
 
 const SymbolDetail = ({ entity }) => {
+	console.log("entity:", entity);
 	return (
 		<div className="symbol-detail">
 			<div className="symbol-detail__symbol">
@@ -106,8 +111,8 @@ const SymbolDetail = ({ entity }) => {
 								d="M3.21,155.43,155.43,3.21l35.46,35.46L99.21,130.35H279V180.5H99.21l91.68,91.69-35.46,35.46Z"
 								fill="none"
 								stroke="#f5bf16"
-								stroke-miterlimit="10"
-								stroke-width="4.54"
+								strokeMiterlimit="10"
+								strokeWidth="4.54"
 							/>
 						</svg>
 					</a>
