@@ -4,15 +4,27 @@
 	flex-direction: column;
 	background-image: url("../../images/bg.svg");
 
+	&:hover .banner__page-title {
+		transform: rotate(180deg) scale(1.1);
+	}
+
+	a {
+		@include center;
+		height: 100%;
+		text-decoration: none;
+		color: $yellow;
+	}
+
 	&__page-title {
 		@include center;
+		@include transition;
 		width: 105%;
 		flex: 1 0;
 		font-size: 3rem;
 		font-family: $space;
 		text-align: center;
 		writing-mode: vertical-rl;
-		transform: rotate(180deg);
+		transform: rotate(180deg) scale(1);
 	}
 }
 
@@ -23,6 +35,10 @@
 			transform: rotate(0);
 			font-size: 1.8rem;
 			line-height: 1;
+		}
+
+		&:hover .banner__page-title {
+			transform: rotate(0) scale(1.1);
 		}
 	}
 }

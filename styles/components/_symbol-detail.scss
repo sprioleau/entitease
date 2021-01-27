@@ -45,7 +45,7 @@
 	&__key {
 		font-size: calc(0.8vw + 2rem);
 		padding: 0.25rem 1rem;
-		margin-bottom: 0.5rem;
+		margin-bottom: 0.25rem;
 
 		&:hover {
 			// cursor: copy;
@@ -68,6 +68,54 @@
 
 	&__css {
 		grid-area: css;
+	}
+
+	&__html,
+	&__css {
+		display: grid;
+		gap: $border-outline-width;
+		background-color: $yellow;
+		grid-template-rows: 1fr 1fr;
+		grid-template-columns: 1fr;
+		grid-template-areas:
+			"reference"
+			"example  ";
+		padding: 0;
+
+		&-reference {
+			@include center;
+			grid-area: reference;
+			flex-direction: column;
+			height: 100%;
+		}
+
+		&-example {
+			@include center;
+			grid-area: example;
+			height: 100%;
+
+			code {
+				background-color: darken($black, 10%);
+				padding: 1rem;
+				margin: 1rem;
+				text-align: left;
+				overflow: scroll;
+			}
+
+			pre {
+				margin: 0;
+				padding: 0;
+				line-height: 1.25;
+
+				&.comment {
+					color: lighten($black, 15%);
+				}
+			}
+		}
+
+		& > * {
+			background-color: $black;
+		}
 	}
 
 	&__unicode {
@@ -109,9 +157,38 @@
 	}
 }
 
-@mixin above-lg {
-	.symbol-detail__symbol-mark {
-		font-size: 4rem;
+@include xsm {
+	.symbol-detail {
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr;
+		grid-template-areas:
+			"symbol "
+			"entity "
+			"unicode"
+			"html   "
+			"css    "
+			"back   ";
+
+		&__key {
+			margin: 1rem 0.5rem 0;
+		}
+
+		&__label {
+			margin-bottom: 1rem;
+		}
+
+		&__html,
+		&__css {
+			gap: 0;
+
+			.symbol-detail__label {
+				margin-bottom: 0;
+			}
+
+			code {
+				margin: 0 1rem 1rem;
+			}
+		}
 	}
 }
 

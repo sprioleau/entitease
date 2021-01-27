@@ -73,24 +73,52 @@ const SymbolDetail = ({ entity }) => (
 			<span className="symbol-detail__label">Entity</span>
 		</div>
 		<div className="symbol-detail__html">
-			<LabelWithCopy
-				label={entity.htmlCode}
-				tag={"span"}
-				className="symbol-detail__key"
-				textToCopy={entity.htmlCode}
-				copy={true}
-			/>
-			<span className="symbol-detail__label">HTML Code</span>
+			<div className="symbol-detail__html-reference">
+				<LabelWithCopy
+					label={entity.htmlCode}
+					tag={"span"}
+					className="symbol-detail__key"
+					textToCopy={entity.htmlCode}
+					copy={true}
+				/>
+				<span className="symbol-detail__label">HTML Code</span>
+			</div>
+			<div className="symbol-detail__html-example">
+				<code>
+					<pre className="comment">{`<!-- HTML example -->`}</pre>
+					<LabelWithCopy
+						label={`<span> ${entity.htmlCode} </span>`}
+						tag={"pre"}
+						className={null}
+						textToCopy={`<span> ${entity.htmlCode} </span>`}
+						copy={true}
+					/>
+				</code>
+			</div>
 		</div>
 		<div className="symbol-detail__css">
-			<LabelWithCopy
-				label={entity.cssCode}
-				tag={"span"}
-				className="symbol-detail__key"
-				textToCopy={entity.cssCode}
-				copy={true}
-			/>
-			<span className="symbol-detail__label">CSS Code</span>
+			<div className="symbol-detail__css-reference">
+				<LabelWithCopy
+					label={entity.cssCode}
+					tag={"span"}
+					className="symbol-detail__key"
+					textToCopy={entity.cssCode}
+					copy={true}
+				/>
+				<span className="symbol-detail__label">CSS Code</span>
+			</div>
+			<div className="symbol-detail__css-example">
+				<code>
+					<pre className="comment">{`/* CSS example */`}</pre>
+					<LabelWithCopy
+						label={`span { content: ${entity.cssCode} }`}
+						tag={"pre"}
+						className={null}
+						textToCopy={`span { content: ${entity.cssCode} }`}
+						copy={true}
+					/>
+				</code>
+			</div>
 		</div>
 		<div className="symbol-detail__unicode">
 			<LabelWithCopy

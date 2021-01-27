@@ -35,11 +35,11 @@ li {
 	cursor: url("../../images/cursor.svg"), auto;
 
 	a {
-		cursor: url("../../images/cursor-hovered.svg"), auto;
+		cursor: url("../../images/pointer.svg"), auto;
 
 		@include hover-wrapper {
 			&:hover {
-				cursor: url("../../images/cursor-hovered.svg"), auto;
+				cursor: url("../../images/pointer.svg"), auto;
 			}
 		}
 	}
