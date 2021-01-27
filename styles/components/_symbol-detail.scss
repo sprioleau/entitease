@@ -26,11 +26,12 @@
 
 	&__symbol {
 		grid-area: symbol;
+		overflow-y: scroll;
 
 		&-mark {
 			font-family: $roboto;
-			font-size: calc(30vw + 8rem);
-			line-height: 1;
+			font-size: calc(25vw + 8rem);
+			line-height: 0.8;
 			margin: 2rem 0 0;
 
 			// &:hover {
@@ -40,6 +41,7 @@
 
 		.name {
 			font-size: calc(1.25vw + 2.5rem);
+			line-height: 1.25;
 		}
 	}
 
@@ -154,6 +156,10 @@
 			"entity unicode"
 			"html   css    "
 			"back   back   ";
+
+		&__symbol {
+			overflow-y: visible;
+		}
 	}
 }
 
@@ -194,6 +200,6 @@
 
 @media only screen and (min-width: 1180px) {
 	.symbol-detail__symbol-mark {
-		font-size: 40rem;
+		font-size: 30rem;
 	}
 }
