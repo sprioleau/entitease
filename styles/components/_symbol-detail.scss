@@ -31,6 +31,7 @@
 			font-size: calc(30vw + 8rem);
 			line-height: 1;
 			margin: 2rem 0 0;
+			font-family: $ff;
 
 			// &:hover {
 			// 	cursor: copy;
@@ -55,7 +56,6 @@
 
 	&__label {
 		font-size: 1rem;
-		font-family: $space;
 	}
 
 	&__entity {

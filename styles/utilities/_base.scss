@@ -13,7 +13,7 @@ body {
 }
 
 body {
-	font-family: $ff;
+	font-family: $space;
 	color: $yellow;
 }
 
@@ -61,18 +61,20 @@ li {
 	background-color: $yellow;
 	// width: 100%;
 
-	grid-template-columns: auto 1fr;
-	grid-template-rows: 1fr $footer-height;
+	grid-template-columns: 10rem 1fr;
+	grid-template-rows: 1fr 10rem $footer-height;
 	grid-template-areas:
-		"banner entities"
-		"footer entities";
+		"banner       entities"
+		"instructions entities"
+		"footer       entities";
 
 	@include sm {
 		grid-template-columns: 1fr;
 		grid-template-rows: 1fr auto auto;
 		grid-template-areas:
-			"banner"
-			"entities"
-			"footer";
+			"banner      "
+			"entities    "
+			"instructions"
+			"footer      ";
 	}
 }

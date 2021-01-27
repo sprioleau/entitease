@@ -10,6 +10,7 @@ import Banner from "../../components/Banner";
 import Footer from "../../components/Footer";
 import ModalTarget from "../../components/ModalTarget";
 import { Entity } from "../../types/types";
+import Instructions from "../../components/Instructions";
 
 const Symbol = () => {
 	const router = useRouter();
@@ -31,6 +32,7 @@ const Symbol = () => {
 
 				<main className="main-content">
 					<Banner />
+					<Instructions />
 					<Footer />
 					<SymbolDetail entity={entity} />
 				</main>
