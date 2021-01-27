@@ -8,6 +8,16 @@
 	gap: $border-outline-width;
 	z-index: 1;
 
+	&.no-results {
+		.no-results-message {
+			font-size: 1.5rem;
+			padding: 2rem;
+			background-color: $black;
+			text-align: center;
+			margin: 0;
+		}
+	}
+
 	&__positioner {
 		@include center;
 		flex-direction: column;

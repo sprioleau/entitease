@@ -24,6 +24,13 @@ const EntitiesList = () => {
 		);
 	}
 
+	if (searchQuery.length > 0 && entities.length === 0)
+		return (
+			<div className="entities-list no-results">
+				<h2 className="no-results-message">Sorry, no results for that search term.</h2>
+			</div>
+		);
+
 	return (
 		<ul className="entities-list">
 			{entities.map((entity) => (
