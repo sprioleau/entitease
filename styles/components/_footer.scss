@@ -44,6 +44,10 @@
 		@include center;
 		flex-direction: column;
 	}
+
+	&__created-by {
+		text-align: center;
+	}
 }
 
 @include sm {
@@ -67,6 +71,10 @@
 
 		&__emoji {
 			display: none;
+		}
+
+		&__byline {
+			flex-direction: row;
 		}
 	}
 }

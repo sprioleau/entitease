@@ -1,5 +1,14 @@
 .instructions {
+	@include center;
 	background-image: url("../../images/bg.svg");
 	padding: 1rem;
 	text-align: center;
+
+	&__description {
+		margin: 0;
+	}
+}
+
+@include sm {
+	padding: 0.5rem;
 }

@@ -7,16 +7,18 @@ const Footer = () => {
 				<li className="footer__link">
 					<a href="https://github.com/sprioleau/entitease">source →</a>
 				</li>
-				<li className="footer__link">
+				{/* <li className="footer__link">
 					<a href="https://github.com/sprioleau">about →</a>
-				</li>
+				</li> */}
 			</ul>
 			<div className="footer__byline">
 				<span className="footer__emoji">👨🏾&zwj;💻</span>
-				<span className="footer__created-by">created by</span>
-				<a href="https://github.com/sprioleau" className="footer__credit">
-					@sprioleau →
-				</a>{" "}
+				<span className="footer__created-by">
+					created by
+					<a href="https://github.com/sprioleau" className="footer__credit">
+						@sprioleau →
+					</a>
+				</span>
 			</div>
 		</div>
 	);

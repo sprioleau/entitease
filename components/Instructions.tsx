@@ -3,7 +3,7 @@ import React from "react";
 const Instructions = () => {
 	return (
 		<div className="instructions">
-			<p className="instructions__description">Select entity text to copy it to your clipboard.</p>
+			<p className="instructions__description">Select entity or label to copy.</p>
 		</div>
 	);
 };
