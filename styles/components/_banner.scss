@@ -4,15 +4,31 @@
 	flex-direction: column;
 	background-image: url("../../images/bg.svg");
 
-	&:hover .banner__page-title {
-		transform: rotate(180deg) scale(1.1);
+	&:hover {
+		.banner__logo {
+			transform: scale(1.1);
+		}
+
+		.banner__page-title {
+			transform: rotate(180deg) scale(1.1);
+		}
 	}
 
 	a {
 		@include center;
+		flex-direction: column;
 		height: 100%;
 		text-decoration: none;
 		color: $yellow;
+
+		span {
+			font-size: 3rem;
+		}
+	}
+
+	.banner__logo {
+		@include transition;
+		transform: scale(1);
 	}
 
 	&__page-title {
@@ -28,12 +44,17 @@
 }
 
 @include sm {
+	.banner__logo {
+		line-height: 1;
+	}
+
 	.banner {
 		&__page-title {
-			writing-mode: horizontal-tb;
-			transform: rotate(0);
-			font-size: 1.8rem;
-			line-height: 1;
+			display: none;
+			// writing-mode: horizontal-tb;
+			// transform: rotate(0);
+			// font-size: 1.8rem;
+			// line-height: 1;
 		}
 
 		&:hover .banner__page-title {

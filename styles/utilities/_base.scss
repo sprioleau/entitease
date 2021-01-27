@@ -59,11 +59,10 @@ li {
 	display: grid;
 	gap: $border-outline-width;
 	background-color: $yellow;
-	// width: 100%;
-
 	grid-template-columns: 10rem 1fr;
-	grid-template-rows: 1fr 10rem $footer-height;
+	grid-template-rows: auto 1fr 10rem $footer-height;
 	grid-template-areas:
+		"banner       search  "
 		"banner       entities"
 		"instructions entities"
 		"footer       entities";
@@ -73,6 +72,7 @@ li {
 		grid-template-rows: 1fr auto;
 		grid-template-areas:
 			"banner      "
+			"search      "
 			"entities    "
 			"instructions"
 			"footer      ";

@@ -28,10 +28,10 @@
 		grid-area: symbol;
 
 		&-mark {
+			font-family: $roboto;
 			font-size: calc(30vw + 8rem);
 			line-height: 1;
 			margin: 2rem 0 0;
-			font-family: $ff;
 
 			// &:hover {
 			// 	cursor: copy;

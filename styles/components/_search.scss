@@ -1,0 +1,28 @@
+.search {
+	@include center;
+	position: relative;
+
+	&__icon {
+		position: absolute;
+		left: 0;
+		top: 55%;
+		transform: translateY(-50%);
+		margin-left: 0.5rem;
+	}
+
+	&__input {
+		flex: 1 0;
+		appearance: none;
+		border: none;
+		font-size: 2rem;
+		padding: 0.5rem;
+		padding-left: 3.5rem;
+		color: $yellow;
+		background-color: $black;
+		font-family: $space-bold;
+
+		&:focus {
+			outline: none;
+		}
+	}
+}

@@ -6,6 +6,7 @@ const Banner = () => {
 		<div className="banner">
 			<Link href="/">
 				<a>
+					<span className="banner__logo">&#8779;</span>
 					<h1 className="banner__page-title">Entitease</h1>
 				</a>
 			</Link>
