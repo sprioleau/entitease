@@ -50,3 +50,9 @@ $border-outline-width: 0.5rem;
 @mixin shadow($color: $black) {
 	box-shadow: 1.25rem 1.25rem 0 0 rgba(darken($color, 10%), 0.4);
 }
+
+@mixin hover-wrapper {
+	@media (hover: hover) {
+		@content;
+	}
+}

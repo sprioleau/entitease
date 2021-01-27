@@ -79,12 +79,11 @@
 		}
 
 		&.name {
-			font-family: $ffs;
 			font-size: 1.2rem;
 			margin-bottom: 0.5rem;
 		}
 
-		&.no-copy:hover {
+		&:not(.copy):hover {
 			// cursor: default;
 			background-color: transparent;
 			color: currentColor;

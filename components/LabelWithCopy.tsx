@@ -39,7 +39,7 @@ const LabelWithCopy: React.FunctionComponent<PropTypes & React.HTMLAttributes<HT
 	const listItemClasses = {
 		[className]: className ? true : null,
 		[addClass]: addClass ? true : null,
-		"no-copy": !copy,
+		copy,
 		blank,
 	};
 

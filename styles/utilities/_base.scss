@@ -34,9 +34,20 @@ li {
 	overflow-x: visible;
 	cursor: url("../../images/cursor.svg"), auto;
 
-	a,
-	a:hover {
-		cursor: url("../../images/cursor.svg"), auto;
+	a {
+		cursor: url("../../images/cursor-hovered.svg"), auto;
+
+		@include hover-wrapper {
+			&:hover {
+				cursor: url("../../images/cursor-hovered.svg"), auto;
+			}
+		}
+	}
+
+	@include hover-wrapper {
+		.copy:hover {
+			cursor: url("../../images/copy.svg"), auto;
+		}
 	}
 }
 
