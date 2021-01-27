@@ -1,10 +1,29 @@
-import entities from "../utilities/entities";
+import entitiesList from "../utilities/entities";
 import LabelWithCopy from "../components/LabelWithCopy";
 import entityDisplayValues from "../utilities/entityDisplayValues";
-import { dashString } from "../utilities/utilityFunctions";
+import { convertToMatchString, dashString } from "../utilities/utilityFunctions";
 import Icon from "./Icon";
+import { useSelector } from "react-redux";
+import { selectSearchQuery } from "../state-provider/selectors";
 
 const EntitiesList = () => {
+	const searchQuery = useSelector(selectSearchQuery);
+	const searchQueryMatchString = convertToMatchString(searchQuery);
+
+	let entities = [];
+
+	if (searchQuery.length === 0) {
+		entities = entitiesList;
+	} else {
+		entities = entitiesList.filter(
+			(entity) =>
+				convertToMatchString(entity.name).includes(searchQueryMatchString) ||
+				convertToMatchString(entity.symbol).includes(searchQueryMatchString) ||
+				convertToMatchString(entity.entity).includes(searchQueryMatchString) ||
+				convertToMatchString(entity.unicode).includes(searchQueryMatchString)
+		);
+	}
+
 	return (
 		<ul className="entities-list">
 			{entities.map((entity) => (

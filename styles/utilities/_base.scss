@@ -67,6 +67,14 @@ li {
 		"instructions entities"
 		"footer       entities";
 
+	&.no-search {
+		grid-template-rows: 1fr 10rem $footer-height;
+		grid-template-areas:
+			"banner       entities"
+			"instructions entities"
+			"footer       entities";
+	}
+
 	@include sm {
 		grid-template-columns: 1fr;
 		grid-template-rows: 1fr auto;

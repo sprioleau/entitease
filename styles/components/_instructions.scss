@@ -1,5 +1,6 @@
 .instructions {
 	@include center;
+	grid-area: instructions;
 	background-image: url("../../images/bg.svg");
 	padding: 1rem;
 	text-align: center;

@@ -11,7 +11,6 @@ import Footer from "../../components/Footer";
 import ModalTarget from "../../components/ModalTarget";
 import { Entity } from "../../types/types";
 import Instructions from "../../components/Instructions";
-import Search from "../../components/Search";
 
 const Symbol = () => {
 	const router = useRouter();
@@ -31,9 +30,8 @@ const Symbol = () => {
 
 				<ModalTarget />
 
-				<main className="main-content">
+				<main className="main-content no-search">
 					<Banner />
-					<Search />
 					<Instructions />
 					<Footer />
 					<SymbolDetail entity={entity} />

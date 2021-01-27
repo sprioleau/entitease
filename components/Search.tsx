@@ -22,7 +22,7 @@ const Search = () => {
 };
 
 const SearchIcon = () => (
-	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 234.5 234.5" width="2.5rem" height="2.5rem">
+	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 234.5 234.5" width="2.25rem" height="2.25rem">
 		<path
 			d="M199.39,163.93a107.6,107.6,0,1,0-35.46,35.46L199,234.5,234.5,199Zm-91.76,1.19a57.49,57.49,0,1,1,57.49-57.49A57.49,57.49,0,0,1,107.63,165.12Z"
 			fill="#f5bf16"
