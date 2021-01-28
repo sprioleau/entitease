@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Provider } from "react-redux";
 import store from "../../state-provider/store";
 import { useRouter } from "next/router";
-import entities from "../../utilities/entities";
+import entities from "../../../.references/archive/entities";
 import { dashString } from "../../utilities/utilityFunctions";
 import LabelWithCopy from "../../components/LabelWithCopy";
 import Banner from "../../components/Banner";
@@ -18,7 +18,7 @@ const Symbol = () => {
 
 	if (!symbolName) return null; // useRouter hook returns undefined on first render.
 
-	const entity: Entity = entities.find((entity) => dashString(entity.name) === symbolName);
+	const entity: any = entities.find((entity) => dashString(entity.name) === symbolName);
 
 	return (
 		<Provider store={store}>

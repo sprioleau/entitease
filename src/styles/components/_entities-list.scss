@@ -18,6 +18,19 @@
 		}
 	}
 
+	&__category {
+		background-color: $black;
+		overflow: hidden;
+
+		&-label {
+			font-size: 2rem;
+			line-height: 1.25;
+			hyphens: auto;
+			margin: 0;
+			padding: 1rem;
+		}
+	}
+
 	&__positioner {
 		@include center;
 		flex-direction: column;

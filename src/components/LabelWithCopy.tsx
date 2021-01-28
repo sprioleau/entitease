@@ -7,6 +7,7 @@ import { composeClasses } from "../utilities/utilityFunctions";
 // https://stackoverflow.com/questions/55969769/typing-a-dynamic-tag-in-react-with-typescript
 
 interface PropTypes {
+	[key: string]: string | boolean | undefined;
 	tag: keyof JSX.IntrinsicElements;
 	label: string;
 	className?: string;
@@ -36,7 +37,7 @@ const LabelWithCopy: React.FunctionComponent<PropTypes & React.HTMLAttributes<HT
 
 	const CustomTag = `${tag}`;
 
-	const listItemClasses = {
+	const listItemClasses: any = {
 		[className]: className ? true : null,
 		[addClass]: addClass ? true : null,
 		copy,
