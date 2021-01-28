@@ -1,14 +1,15 @@
 import React from "react";
-import { entitiesList } from "../utilities/entitiesList";
 import LabelWithCopy from "./LabelWithCopy";
 import entityDisplayValues from "../utilities/entityDisplayValues";
 import { convertToMatchString, dashString } from "../utilities/utilityFunctions";
 import Icon, { ArrowIcon } from "./Icon";
 import { useSelector } from "react-redux";
-import { selectSearchQuery } from "../state-provider/selectors";
+import { selectSearchQuery, selectEntitiesList } from "../state-provider/selectors";
+import { EntitityCategory } from "../types/types";
 
 const EntitiesList = () => {
 	const searchQuery = useSelector(selectSearchQuery);
+	const entitiesList = useSelector(selectEntitiesList);
 	const searchQueryMatchString = convertToMatchString(searchQuery);
 
 	let entities: any = [];
@@ -41,19 +42,19 @@ const EntitiesList = () => {
 
 	return (
 		<ul className="entities-list" lang="en">
-			{entitiesList.map((category) => (
-				<React.Fragment key={category.categoryLabel}>
+			{entities.map((entityGroup: EntitityCategory) => (
+				<React.Fragment key={entityGroup.categoryLabel}>
 					<li className="entities-list__category">
-						<h3 className="entities-list__category-label">{category.categoryLabel}</h3>
+						<h3 className="entities-list__category-label">{entityGroup.categoryLabel}</h3>
 						<span
 							className="entities-list__category-icon"
-							onClick={() => handleFilterByCategory(category.categoryLabel)}
+							// onClick={() => handleFilterByCategory(category.categoryLabel)}
 						>
 							<ArrowIcon />
 						</span>
 					</li>
-					{category.entities.map((entity) => (
-						<li key={`${category.categoryLabel}-${entity.name}`} className="entities-list__item">
+					{entityGroup.entities.map((entity) => (
+						<li key={`${entityGroup.categoryLabel}-${entity.name}`} className="entities-list__item">
 							<div className="entities-list__positioner">
 								<div className="entities-list__labels">
 									{Object.keys(entityDisplayValues).map((key) => (

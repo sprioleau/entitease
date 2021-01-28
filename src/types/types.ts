@@ -22,3 +22,9 @@ export interface EntityDisplayValueTypes {
 		copy: boolean;
 	};
 }
+
+export interface StateType {
+	modalContent: {} | null;
+	searchQuery: string;
+	entitiesList: EntitityCategory[];
+}

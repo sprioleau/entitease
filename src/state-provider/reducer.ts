@@ -1,12 +1,11 @@
 import types from "./types";
+import { StateType } from "../types/types";
+import { entitiesList } from "../utilities/entitiesList";
 
-interface InitialStateType {
-	modalContent: {} | null;
-	searchQuery: string;
-}
-const initialState: InitialStateType = {
+const initialState: StateType = {
 	modalContent: null,
 	searchQuery: "",
+	entitiesList: entitiesList,
 };
 
 const reducer = (state = initialState, action: any) => {
@@ -14,7 +13,7 @@ const reducer = (state = initialState, action: any) => {
 		case types.TOGGLE_MODAL_VISIBILITY:
 			const existingModalContent = state.modalContent !== null;
 
-			let newModalContent: {};
+			let newModalContent: {} | null = {};
 			if (!existingModalContent || action.modalContent) newModalContent = action.modalContent;
 			if (existingModalContent && action.modalContent === null) newModalContent = null;
 
