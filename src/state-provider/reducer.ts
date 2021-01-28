@@ -1,4 +1,4 @@
-import types from "./types";
+import constants from "./constants";
 import { StateType } from "../types/types";
 import { entitiesList } from "../utilities/entitiesList";
 
@@ -10,7 +10,7 @@ const initialState: StateType = {
 
 const reducer = (state = initialState, action: any) => {
 	switch (action.type) {
-		case types.TOGGLE_MODAL_VISIBILITY:
+		case constants.TOGGLE_MODAL_VISIBILITY:
 			const existingModalContent = state.modalContent !== null;
 
 			let newModalContent: {} | null = {};
@@ -22,7 +22,7 @@ const reducer = (state = initialState, action: any) => {
 				modalContent: newModalContent,
 			};
 
-		case types.UPDATE_SEARCH_QUERY:
+		case constants.UPDATE_SEARCH_QUERY:
 			return {
 				...state,
 				searchQuery: action.searchQuery,

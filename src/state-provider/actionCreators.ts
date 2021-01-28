@@ -1,11 +1,11 @@
-import types from "./types";
+import constants from "./constants";
 
 export const toggleModalVisibility = (modalContent?: {}) => ({
-	type: types.TOGGLE_MODAL_VISIBILITY,
+	type: constants.TOGGLE_MODAL_VISIBILITY,
 	modalContent: modalContent ? modalContent : null,
 });
 
 export const updateSearchQuery = (searchQuery?: string) => ({
-	type: types.UPDATE_SEARCH_QUERY,
+	type: constants.UPDATE_SEARCH_QUERY,
 	searchQuery,
 });

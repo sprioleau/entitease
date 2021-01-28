@@ -18,14 +18,30 @@ const EntitiesList = () => {
 		entities = entitiesList;
 	} else {
 		entities = entitiesList
-			.flatMap(({ entities }) => entities)
+			// .flatMap(({ entities }) => entities)
 			.filter(
-				(entity) =>
-					convertToMatchString(entity.name).includes(searchQueryMatchString) ||
-					convertToMatchString(entity.symbol).includes(searchQueryMatchString) ||
-					convertToMatchString(entity.entity).includes(searchQueryMatchString) ||
-					convertToMatchString(entity.unicode).includes(searchQueryMatchString)
-			);
+				(entityGroup) =>
+					entityGroup.entities.some(
+						(entity) =>
+							convertToMatchString(entityGroup.categoryLabel).includes(searchQueryMatchString) ||
+							convertToMatchString(entity.name).includes(searchQueryMatchString) ||
+							convertToMatchString(entity.symbol).includes(searchQueryMatchString) ||
+							convertToMatchString(entity.entity).includes(searchQueryMatchString) ||
+							convertToMatchString(entity.unicode).includes(searchQueryMatchString)
+					)
+				// convertToMatchString(entity.name).includes(searchQueryMatchString) ||
+			)
+			.map((entityGroup) => {
+				const filteredEntities = entityGroup.entities?.filter(
+					(entity) =>
+						convertToMatchString(entity.name).includes(searchQueryMatchString) ||
+						convertToMatchString(entity.symbol).includes(searchQueryMatchString) ||
+						convertToMatchString(entity.entity).includes(searchQueryMatchString) ||
+						convertToMatchString(entity.unicode).includes(searchQueryMatchString)
+				);
+
+				return { ...entityGroup, entities: filteredEntities };
+			});
 	}
 
 	if (searchQuery.length > 0 && entities.length === 0)
@@ -53,8 +69,8 @@ const EntitiesList = () => {
 							<ArrowIcon />
 						</span>
 					</li>
-					{entityGroup.entities.map((entity) => (
-						<li key={`${entityGroup.categoryLabel}-${entity.name}`} className="entities-list__item">
+					{entityGroup?.entities?.map((entity, index) => (
+						<li key={`${entityGroup.categoryLabel}-${entity.name}-${index}`} className="entities-list__item">
 							<div className="entities-list__positioner">
 								<div className="entities-list__labels">
 									{Object.keys(entityDisplayValues).map((key) => (
