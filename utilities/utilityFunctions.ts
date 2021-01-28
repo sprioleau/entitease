@@ -1,6 +1,6 @@
-export const dashString = (string: string) => string.trim().toLowerCase().replace(" ", "-").replace("  ", "-");
+export const dashString = (string: string) => string.trim().toLowerCase().replace(/[-\s]/g, "-");
 
-export const convertToMatchString = (string: string) => string.trim().toLowerCase().replace(" ", "");
+export const convertToMatchString = (string: string) => string.trim().toLowerCase().replace(/[-\s]/g, "");
 
 export const composeClasses = (classesObject) => {
 	const classList = Object.entries(classesObject);

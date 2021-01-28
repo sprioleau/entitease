@@ -60,7 +60,7 @@ li {
 	gap: $border-outline-width;
 	background-color: $yellow;
 	grid-template-columns: 10rem 1fr;
-	grid-template-rows: auto 1fr 10rem $footer-height;
+	grid-template-rows: auto 1fr auto $footer-height;
 	grid-template-areas:
 		"banner       search  "
 		"banner       entities"
@@ -68,7 +68,7 @@ li {
 		"footer       entities";
 
 	&.no-search {
-		grid-template-rows: 1fr 10rem $footer-height;
+		grid-template-rows: 1fr auto $footer-height;
 		grid-template-areas:
 			"banner       entities"
 			"instructions entities"
