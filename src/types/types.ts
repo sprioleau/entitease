@@ -1,5 +1,4 @@
 export interface Entity {
-	[key: string]: string | boolean | undefined;
 	symbol: string;
 	entity: string;
 	htmlCode: string;
@@ -7,6 +6,7 @@ export interface Entity {
 	unicode: string;
 	name: string;
 	blank?: boolean;
+	[key: string]: string | boolean | undefined;
 }
 
 export interface EntitityCategory {

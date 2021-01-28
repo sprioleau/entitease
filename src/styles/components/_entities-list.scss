@@ -19,15 +19,31 @@
 	}
 
 	&__category {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: space-between;
 		background-color: $black;
 		overflow: hidden;
 
 		&-label {
 			font-size: 2rem;
-			line-height: 1.25;
+			line-height: 1;
 			hyphens: auto;
 			margin: 0;
-			padding: 1rem;
+			padding: 1.5rem;
+		}
+
+		&-icon {
+			align-self: flex-end;
+			margin: 2rem;
+			cursor: url("../../images/pointer.svg"), auto;
+
+			svg {
+				transform: rotate(45deg);
+				width: 2.15rem;
+				height: 2.15rem;
+			}
 		}
 	}
 

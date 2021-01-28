@@ -3,7 +3,7 @@ import { entitiesList } from "../utilities/entitiesList";
 import LabelWithCopy from "./LabelWithCopy";
 import entityDisplayValues from "../utilities/entityDisplayValues";
 import { convertToMatchString, dashString } from "../utilities/utilityFunctions";
-import Icon from "./Icon";
+import Icon, { ArrowIcon } from "./Icon";
 import { useSelector } from "react-redux";
 import { selectSearchQuery } from "../state-provider/selectors";
 
@@ -11,7 +11,7 @@ const EntitiesList = () => {
 	const searchQuery = useSelector(selectSearchQuery);
 	const searchQueryMatchString = convertToMatchString(searchQuery);
 
-	let entities = [];
+	let entities: any = [];
 
 	if (searchQuery.length === 0) {
 		entities = entitiesList;
@@ -34,12 +34,23 @@ const EntitiesList = () => {
 			</div>
 		);
 
+	// const handleFilterByCategory = (categoryLabel: string) => {
+	// 	entities = entities.find((group) => group.categoryLabel === categoryLabel).entities;
+	// 	console.log("entities:", entities);
+	// };
+
 	return (
 		<ul className="entities-list" lang="en">
 			{entitiesList.map((category) => (
 				<React.Fragment key={category.categoryLabel}>
 					<li className="entities-list__category">
 						<h3 className="entities-list__category-label">{category.categoryLabel}</h3>
+						<span
+							className="entities-list__category-icon"
+							onClick={() => handleFilterByCategory(category.categoryLabel)}
+						>
+							<ArrowIcon />
+						</span>
 					</li>
 					{category.entities.map((entity) => (
 						<li key={`${category.categoryLabel}-${entity.name}`} className="entities-list__item">
@@ -75,17 +86,5 @@ const EntitiesList = () => {
 		</ul>
 	);
 };
-
-const ArrowIcon = () => (
-	<svg
-		xmlns="http://www.w3.org/2000/svg"
-		viewBox="0 0 215.27 215.27"
-		width="100%"
-		height="100%"
-		className="icon arrow-icon"
-	>
-		<path d="M215.27,0V215.27H165.12V85.61L38,212.73,2.54,177.27,129.66,50.15H0V0Z" fill="#f5bf16" />
-	</svg>
-);
 
 export default EntitiesList;

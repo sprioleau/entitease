@@ -139,7 +139,7 @@
 
 		$padding: 2rem;
 
-		&-arrow {
+		&-arrow svg {
 			padding: $padding;
 			height: calc(100% - 2 * #{$padding});
 			width: calc(100% - 2 * #{$padding});

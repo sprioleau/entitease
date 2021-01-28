@@ -9,7 +9,8 @@ import LabelWithCopy from "../../components/LabelWithCopy";
 import Banner from "../../components/Banner";
 import Footer from "../../components/Footer";
 import ModalTarget from "../../components/ModalTarget";
-import { Entity } from "../../types/types";
+// import { Entity } from "../../types/types";
+import { OutlinedArrowIcon } from "../../components/Icon";
 import Instructions from "../../components/Instructions";
 
 const Symbol = () => {
@@ -135,15 +136,9 @@ const SymbolDetail = ({ entity }) => (
 		<div className="symbol-detail__back">
 			<Link href="/">
 				<a>
-					<svg className="symbol-detail__back-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 281.25 310.86">
-						<path
-							d="M3.21,155.43,155.43,3.21l35.46,35.46L99.21,130.35H279V180.5H99.21l91.68,91.69-35.46,35.46Z"
-							fill="none"
-							stroke="#f5bf16"
-							strokeMiterlimit="10"
-							strokeWidth="4.54"
-						/>
-					</svg>
+					<span className="symbol-detail__back-arrow">
+						<OutlinedArrowIcon />
+					</span>
 				</a>
 			</Link>
 		</div>
