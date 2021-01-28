@@ -1,12 +1,15 @@
 import React from "react";
 import Link from "next/link";
+import { Logo } from "./Icon";
 
 const Banner = () => {
 	return (
 		<div className="banner">
 			<Link href="/">
 				<a>
-					<span className="banner__logo">&#8779;</span>
+					<span className="banner__logo">
+						<Logo />
+					</span>
 					<h1 className="banner__page-title">Entitease</h1>
 				</a>
 			</Link>

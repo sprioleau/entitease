@@ -3,6 +3,7 @@
 	grid-area: banner;
 	flex-direction: column;
 	background-image: url("../../images/bg.svg");
+	overflow: hidden;
 
 	&:hover {
 		.banner__logo {
@@ -15,11 +16,13 @@
 	}
 
 	a {
-		@include center;
+		display: flex;
 		flex-direction: column;
 		height: 100%;
+		width: 100%;
 		text-decoration: none;
 		color: $yellow;
+		padding: 1rem;
 
 		span {
 			font-size: 3rem;
@@ -28,13 +31,16 @@
 
 	.banner__logo {
 		@include transition;
+		@include center;
 		transform: scale(1);
+		padding: 0.25rem;
+		line-height: 1;
 	}
 
 	&__page-title {
 		@include center;
 		@include transition;
-		width: 105%;
+		line-height: 1;
 		flex: 1 0;
 		font-size: 3rem;
 		margin: 1rem;
