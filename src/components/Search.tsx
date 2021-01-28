@@ -24,7 +24,9 @@ const Search = () => {
 			<span className="search__icon clear" onClick={handleClearSearch}>
 				<ClearIcon />
 			</span>
-			<input className="search__input" type="text" value={searchQuery} autoFocus={false} onChange={handleChange} />
+			<div className="search__input-wrapper">
+				<input className="search__input" type="text" value={searchQuery} autoFocus={false} onChange={handleChange} />
+			</div>
 		</div>
 	);
 };
