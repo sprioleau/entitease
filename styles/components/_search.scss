@@ -3,11 +3,21 @@
 	position: relative;
 
 	&__icon {
+		@include center;
 		position: absolute;
-		left: 0;
-		top: 60%;
 		transform: translateY(-50%);
-		margin-left: 0.5rem;
+
+		&.search {
+			left: 0;
+			top: 50%;
+			margin-left: 0.65rem;
+		}
+
+		&.clear {
+			right: 0;
+			top: 50%;
+			margin-right: 0.65rem;
+		}
 	}
 
 	&__input {

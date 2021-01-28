@@ -5,7 +5,7 @@ export const toggleModalVisibility = (modalContent?: {}) => ({
 	modalContent: modalContent ? modalContent : null,
 });
 
-export const updateSearchQuery = (searchQuery: string) => ({
+export const updateSearchQuery = (searchQuery?: string) => ({
 	type: types.UPDATE_SEARCH_QUERY,
 	searchQuery,
 });
