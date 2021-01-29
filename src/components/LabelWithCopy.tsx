@@ -7,17 +7,23 @@ import { composeClasses } from "../utilities/utilityFunctions";
 // https://stackoverflow.com/questions/55969769/typing-a-dynamic-tag-in-react-with-typescript
 
 interface PropTypes {
-	[key: string]: string | boolean | undefined;
-	tag: keyof JSX.IntrinsicElements;
+	[key: string]: any;
+	tag: keyof JSX.IntrinsicElements | string;
 	label: string;
-	className?: string;
-	addClass?: string;
-	textToCopy: string;
+	className?: any;
+	addClass?: any;
+	textToCopy?: any;
 	copy: boolean;
 	blank?: boolean;
 }
 
-const LabelWithCopy: React.FunctionComponent<PropTypes & React.HTMLAttributes<HTMLOrSVGElement>> = ({
+interface ListItemClassesTypes {
+	[key: string]: any;
+	copy: any;
+	blank: any;
+}
+
+const LabelWithCopy: React.FunctionComponent<PropTypes> = ({
 	label,
 	tag,
 	className,
@@ -35,9 +41,9 @@ const LabelWithCopy: React.FunctionComponent<PropTypes & React.HTMLAttributes<HT
 		dispatch(toggleModalVisibility(<InfoCard textToCopy={textToCopy} isCopied={isCopied} />));
 	};
 
-	const CustomTag = `${tag}`;
+	const CustomTag: any = `${tag}`;
 
-	const listItemClasses: any = {
+	const listItemClasses: ListItemClassesTypes = {
 		[className]: className ? true : null,
 		[addClass]: addClass ? true : null,
 		copy,

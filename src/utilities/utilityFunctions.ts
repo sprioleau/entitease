@@ -2,10 +2,10 @@ export const dashString = (string: string) => string.trim().toLowerCase().replac
 
 export const convertToMatchString = (string: string) => string.trim().toLowerCase().replace(/[-\s]/g, "");
 
-export const composeClasses = (classesObject) => {
+export const composeClasses = (classesObject: {}) => {
 	const classList = Object.entries(classesObject);
 
-	let newClassList = [];
+	let newClassList: string[] = [];
 
 	classList.forEach(([classString, condition]) => {
 		const validString = typeof condition === "string" && condition === "";

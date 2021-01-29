@@ -44,7 +44,7 @@ const Symbol = () => {
 
 export default Symbol;
 
-const SymbolDetail = ({ entity }) => (
+const SymbolDetail = ({ entity }: any) => (
 	<div className="symbol-detail">
 		<div className="symbol-detail__symbol">
 			<LabelWithCopy

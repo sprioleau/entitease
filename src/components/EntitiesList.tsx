@@ -12,7 +12,7 @@ const EntitiesList = () => {
 	const entitiesList = useSelector(selectEntitiesList);
 	const searchQueryMatchString = convertToMatchString(searchQuery);
 
-	let entities: any = [];
+	let entities: EntitityCategory[] = [];
 
 	if (searchQuery.length === 0) {
 		entities = entitiesList;

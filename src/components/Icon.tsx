@@ -2,7 +2,15 @@ import React from "react";
 import Link from "next/link";
 import { composeClasses } from "../utilities/utilityFunctions";
 
-const Icon = ({ icon, addClass, link, to, size }): any => {
+interface PropTypes {
+	icon: any;
+	addClass?: any;
+	link?: boolean;
+	to?: any;
+	size?: any;
+}
+
+const Icon: React.FunctionComponent<PropTypes> = ({ icon, addClass, link, to, size }): any => {
 	const iconClasses = {
 		icon: "",
 		[size]: size ? true : null,

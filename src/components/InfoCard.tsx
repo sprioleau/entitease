@@ -5,9 +5,14 @@ import { useDispatch, useSelector } from "react-redux";
 
 const NOTIFICATION_DURATION = 3; // in seconds
 
-const InfoCard = ({ isCopied, textToCopy }) => {
+interface PropTypes {
+	isCopied: boolean;
+	textToCopy: string;
+}
+
+const InfoCard: React.FunctionComponent<PropTypes> = ({ isCopied, textToCopy }) => {
 	const dispatch = useDispatch();
-	const wrapper = useRef(null);
+	const wrapper = useRef<HTMLDivElement>(null);
 	const modalContent = useSelector(selectModalContent);
 
 	useEffect(() => {
@@ -17,9 +22,9 @@ const InfoCard = ({ isCopied, textToCopy }) => {
 		};
 	}, [dispatch, isCopied]);
 
-	const useDismissOnOutsideClick = (ref) => {
-		const handleClickOutside = (event) => {
-			if (modalContent && ref.current && !ref.current.contains(event.target)) {
+	const useDismissOnOutsideClick = (ref: any) => {
+		const handleClickOutside = (e: any) => {
+			if (modalContent && ref.current && !ref.current.contains(e.target)) {
 				dispatch(toggleModalVisibility());
 			}
 		};
