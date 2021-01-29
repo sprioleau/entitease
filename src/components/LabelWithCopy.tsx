@@ -23,15 +23,7 @@ interface ListItemClassesTypes {
 	blank: any;
 }
 
-const LabelWithCopy: React.FunctionComponent<PropTypes> = ({
-	label,
-	tag,
-	className,
-	addClass,
-	textToCopy,
-	copy,
-	blank,
-}) => {
+const LabelWithCopy: React.FC<PropTypes> = ({ label, tag, className, addClass, textToCopy, copy, blank }) => {
 	const [isCopied, setCopied] = useClipboard(textToCopy);
 	const dispatch = useDispatch();
 

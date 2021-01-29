@@ -10,7 +10,7 @@ interface PropTypes {
 	size?: any;
 }
 
-const Icon: React.FunctionComponent<PropTypes> = ({ icon, addClass, link, to, size }): any => {
+const Icon: React.FC<PropTypes> = ({ icon, addClass, link, to, size }): any => {
 	const iconClasses = {
 		icon: "",
 		[size]: size ? true : null,

@@ -10,7 +10,7 @@ const Banner = () => {
 					<span className="banner__logo">
 						<Logo />
 					</span>
-					<h1 className="banner__page-title">Entitease</h1>
+					<h1 className="banner__page-title">EntitEase</h1>
 				</a>
 			</Link>
 		</div>

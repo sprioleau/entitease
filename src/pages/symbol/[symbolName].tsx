@@ -1,4 +1,3 @@
-import Head from "next/head";
 import Link from "next/link";
 import { Provider } from "react-redux";
 import store from "../../state-provider/store";
@@ -11,6 +10,7 @@ import ModalTarget from "../../components/ModalTarget";
 import { OutlinedArrowIcon } from "../../components/Icon";
 import Instructions from "../../components/Instructions";
 import { entitiesList } from "../../utilities/entitiesList";
+import HeadContent from "../../components/HeadContent";
 
 const Symbol = () => {
 	const router = useRouter();
@@ -25,10 +25,7 @@ const Symbol = () => {
 	return (
 		<Provider store={store}>
 			<div className="app">
-				<Head>
-					<title>{entity.name}</title>
-					<link rel="icon" href="/favicon.ico" />
-				</Head>
+				<HeadContent customTitle={entity.name} />
 
 				<ModalTarget />
 
