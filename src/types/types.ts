@@ -26,5 +26,4 @@ export interface EntityDisplayValueTypes {
 export interface StateType {
 	modalContent: {} | null;
 	searchQuery: string;
-	entitiesList: EntitityCategory[];
 }

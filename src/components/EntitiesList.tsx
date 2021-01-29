@@ -4,12 +4,12 @@ import entityDisplayValues from "../utilities/entityDisplayValues";
 import { convertToMatchString, dashString } from "../utilities/utilityFunctions";
 import Icon, { ArrowIcon } from "./Icon";
 import { useSelector } from "react-redux";
-import { selectSearchQuery, selectEntitiesList } from "../state-provider/selectors";
+import { selectSearchQuery } from "../state-provider/selectors";
 import { EntitityCategory } from "../types/types";
+import { entitiesList } from "../utilities/entitiesList";
 
 const EntitiesList = () => {
 	const searchQuery = useSelector(selectSearchQuery);
-	const entitiesList = useSelector(selectEntitiesList);
 	const searchQueryMatchString = convertToMatchString(searchQuery);
 
 	let entities: EntitityCategory[] = [];

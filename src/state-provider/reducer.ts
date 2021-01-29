@@ -1,11 +1,9 @@
 import constants from "./constants";
 import { StateType } from "../types/types";
-import { entitiesList } from "../utilities/entitiesList";
 
 const initialState: StateType = {
 	modalContent: null,
 	searchQuery: "",
-	entitiesList: entitiesList,
 };
 
 const reducer = (state = initialState, action: any) => {
