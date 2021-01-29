@@ -1,7 +1,13 @@
 import React, { useState } from "react";
 import LabelWithCopy from "./LabelWithCopy";
 import entityDisplayValues from "../utilities/entityDisplayValues";
-import { convertToMatchString, dashString } from "../utilities/utilityFunctions";
+import {
+	composeClasses,
+	convertToMatchString,
+	dashString,
+	filterEntityBySearchQuery,
+	isInSearchQuery,
+} from "../utilities/utilityFunctions";
 import Icon, { ArrowIcon } from "./Icon";
 import { useSelector } from "react-redux";
 import { selectSearchQuery } from "../state-provider/selectors";
@@ -18,29 +24,37 @@ const EntitiesList = () => {
 
 	if (searchQuery.length === 0 && categoryFilter.length === 0) {
 		entities = entitiesList;
-	} else if (filterActive) {
+	} else if (searchQuery.length === 0 && filterActive) {
 		entities = entitiesList.filter((entityGroup) => entityGroup.categoryLabel === categoryFilter);
+	} else if (searchQuery.length > 0 && filterActive) {
+		const filteredEntitiesGroup = (entities = entitiesList.filter(
+			(entityGroup) => entityGroup.categoryLabel === categoryFilter
+		));
+
+		console.log("filteredEntitiesGroup:", filteredEntitiesGroup);
+
+		const filteredEntitiesBySearchQuery = filteredEntitiesGroup.map((entityGroup) => ({
+			categoryLabel: entityGroup.categoryLabel,
+			entities: filterEntityBySearchQuery(entityGroup.entities, searchQuery),
+		}));
+
+		entities = filteredEntitiesBySearchQuery;
+
+		console.log("filteredEntitiesBySearchQuery:", filteredEntitiesBySearchQuery);
 	} else {
 		entities = entitiesList
-			// .flatMap(({ entities }) => entities)
 			.filter((entityGroup) =>
 				entityGroup.entities.some(
 					(entity) =>
-						convertToMatchString(entityGroup.categoryLabel).includes(searchQueryMatchString) ||
-						convertToMatchString(entity.name).includes(searchQueryMatchString) ||
-						convertToMatchString(entity.symbol).includes(searchQueryMatchString) ||
-						convertToMatchString(entity.entity).includes(searchQueryMatchString) ||
-						convertToMatchString(entity.unicode).includes(searchQueryMatchString)
+						isInSearchQuery(entityGroup.categoryLabel, searchQuery) ||
+						isInSearchQuery(entity.name, searchQuery) ||
+						isInSearchQuery(entity.symbol, searchQuery) ||
+						isInSearchQuery(entity.entity, searchQuery) ||
+						isInSearchQuery(entity.unicode, searchQuery)
 				)
 			)
 			.map((entityGroup) => {
-				const filteredEntities = entityGroup.entities?.filter(
-					(entity) =>
-						convertToMatchString(entity.name).includes(searchQueryMatchString) ||
-						convertToMatchString(entity.symbol).includes(searchQueryMatchString) ||
-						convertToMatchString(entity.entity).includes(searchQueryMatchString) ||
-						convertToMatchString(entity.unicode).includes(searchQueryMatchString)
-				);
+				const filteredEntities = filterEntityBySearchQuery(entityGroup.entities, searchQuery);
 
 				if (convertToMatchString(entityGroup.categoryLabel).includes(searchQueryMatchString)) {
 					return { ...entityGroup, entities: filteredEntities.concat(entityGroup.entities) };
@@ -67,14 +81,21 @@ const EntitiesList = () => {
 		}
 	};
 
+	const arrowIconClasses = {
+		"entities-list__category-icon": "",
+		"filter-active": filterActive,
+	};
+
 	return (
 		<ul className="entities-list" lang="en">
 			{entities.map((entityGroup: EntitityCategory) => (
 				<React.Fragment key={entityGroup.categoryLabel}>
 					<li className="entities-list__category">
-						<h3 className="entities-list__category-label">{entityGroup.categoryLabel}</h3>
+						<h3 className="entities-list__category-label">
+							{filterActive ? `Applied Filter: ${entityGroup.categoryLabel}` : entityGroup.categoryLabel}
+						</h3>
 						<span
-							className="entities-list__category-icon"
+							className={composeClasses(arrowIconClasses)}
 							onClick={() => handleFilterByCategory(entityGroup.categoryLabel)}
 						>
 							<ArrowIcon />
