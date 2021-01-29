@@ -42,7 +42,7 @@
 		@include transition;
 		line-height: 1;
 		flex: 1 0;
-		font-size: 3rem;
+		font-size: calc(2vh + 1.5rem);
 		margin: 1rem;
 		text-align: center;
 		writing-mode: vertical-rl;
