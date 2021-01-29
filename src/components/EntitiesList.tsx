@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import LabelWithCopy from "./LabelWithCopy";
 import entityDisplayValues from "../utilities/entityDisplayValues";
 import { convertToMatchString, dashString } from "../utilities/utilityFunctions";
@@ -11,25 +11,27 @@ import { entitiesList } from "../utilities/entitiesList";
 const EntitiesList = () => {
 	const searchQuery = useSelector(selectSearchQuery);
 	const searchQueryMatchString = convertToMatchString(searchQuery);
+	const [categoryFilter, setCategoryFilter] = useState("");
+	const [filterActive, setFilterActive] = useState(false);
 
 	let entities: EntitityCategory[] = [];
 
-	if (searchQuery.length === 0) {
+	if (searchQuery.length === 0 && categoryFilter.length === 0) {
 		entities = entitiesList;
+	} else if (filterActive) {
+		entities = entitiesList.filter((entityGroup) => entityGroup.categoryLabel === categoryFilter);
 	} else {
 		entities = entitiesList
 			// .flatMap(({ entities }) => entities)
-			.filter(
-				(entityGroup) =>
-					entityGroup.entities.some(
-						(entity) =>
-							convertToMatchString(entityGroup.categoryLabel).includes(searchQueryMatchString) ||
-							convertToMatchString(entity.name).includes(searchQueryMatchString) ||
-							convertToMatchString(entity.symbol).includes(searchQueryMatchString) ||
-							convertToMatchString(entity.entity).includes(searchQueryMatchString) ||
-							convertToMatchString(entity.unicode).includes(searchQueryMatchString)
-					)
-				// convertToMatchString(entity.name).includes(searchQueryMatchString) ||
+			.filter((entityGroup) =>
+				entityGroup.entities.some(
+					(entity) =>
+						convertToMatchString(entityGroup.categoryLabel).includes(searchQueryMatchString) ||
+						convertToMatchString(entity.name).includes(searchQueryMatchString) ||
+						convertToMatchString(entity.symbol).includes(searchQueryMatchString) ||
+						convertToMatchString(entity.entity).includes(searchQueryMatchString) ||
+						convertToMatchString(entity.unicode).includes(searchQueryMatchString)
+				)
 			)
 			.map((entityGroup) => {
 				const filteredEntities = entityGroup.entities?.filter(
@@ -39,6 +41,10 @@ const EntitiesList = () => {
 						convertToMatchString(entity.entity).includes(searchQueryMatchString) ||
 						convertToMatchString(entity.unicode).includes(searchQueryMatchString)
 				);
+
+				if (convertToMatchString(entityGroup.categoryLabel).includes(searchQueryMatchString)) {
+					return { ...entityGroup, entities: filteredEntities.concat(entityGroup.entities) };
+				}
 
 				return { ...entityGroup, entities: filteredEntities };
 			});
@@ -51,10 +57,15 @@ const EntitiesList = () => {
 			</div>
 		);
 
-	// const handleFilterByCategory = (categoryLabel: string) => {
-	// 	entities = entities.find((group) => group.categoryLabel === categoryLabel).entities;
-	// 	console.log("entities:", entities);
-	// };
+	const handleFilterByCategory = (categoryLabel: string) => {
+		if (!filterActive) {
+			setFilterActive(true);
+			setCategoryFilter(categoryLabel);
+		} else {
+			setFilterActive(false);
+			setCategoryFilter("");
+		}
+	};
 
 	return (
 		<ul className="entities-list" lang="en">
@@ -64,7 +75,7 @@ const EntitiesList = () => {
 						<h3 className="entities-list__category-label">{entityGroup.categoryLabel}</h3>
 						<span
 							className="entities-list__category-icon"
-							// onClick={() => handleFilterByCategory(category.categoryLabel)}
+							onClick={() => handleFilterByCategory(entityGroup.categoryLabel)}
 						>
 							<ArrowIcon />
 						</span>
