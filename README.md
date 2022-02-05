@@ -23,7 +23,7 @@ _Screenshots via [Pretty Page](https://prettypage.vercel.app/)_
 Clone this repo
 
 ```bash
-git clone https://github.com/sprioleau/swatches.git
+git clone https://github.com/sprioleau/entitease.git
 ```
 
 Install via yarn
