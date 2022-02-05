@@ -11,5 +11,7 @@
 }
 
 @include sm {
-	padding: 0.5rem;
+	.instructions {
+		padding: 0.5rem;
+	}
 }
