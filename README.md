@@ -1,34 +1,86 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+![Social Card][social-card-url]
 
-## Getting Started
+![Vercel Status](https://img.shields.io/github/deployments/sprioleau/entitease/production?label=vercel&logo=vercel&style=for-the-badge)
 
-First, run the development server:
+# Entitease
+
+A stylish, statically generated HTML entity lookup. See the entities alongside their corresponding HTML and CSS code for reference. Copy any symbol or reference code with a click or tap.
+
+## 🔗 Links
+
+- 🚀 Deployed at [entitease.vercel.app][deployed-url]
+
+## Screenshots
+
+![Homepage Screenshot][homepage-screenshot-url] 
+
+![Symbol Page Screenshot][symbol-page-screenshot-url] 
+
+_Screenshots via [Pretty Page](https://prettypage.vercel.app/)_
+
+## 💿 Installation
+
+Clone this repo
 
 ```bash
-npm run dev
-# or
+git clone https://github.com/sprioleau/swatches.git
+```
+
+Install via yarn
+
+```bash
+yarn install
+```
+
+Run developemnt server
+
+```bash
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠 Built With
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+| Technology            | Used For                          |
+| :-------------------- | :-------------------------------- |
+| TypeScript            | -                                 |
+| Next.js               | Static site generation            |
+| Vercel                | Hosting                           |
+| Redux                 | State management                  |
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## ✨ Features
+- [x] Search by entity name or group
+- [x] Copy entity codes with a click or tap
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## ⬆️ Future Updates
 
-## Learn More
+- [ ] Improve robustness of search with fuzzy matching
 
-To learn more about Next.js, take a look at the following resources:
+## 👨🏾‍💻 Author
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**San'Quan Prioleau**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- [Profile][github-url]
+- [Website][website]
+- [LinkedIn][linkedin]
 
-## Deploy on Vercel
+## 🎗 Support
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Issues, and feature requests are welcome!
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Give a ⭐️ if you like this project!
+
+## Acknowledgements
+
+- [HTML Entity List](https://dev.w3.org/html5/html-author/charref)
+
+<!-- Author Details -->
+[github-url]: https://github.com/spriolau "San'Quan Prioleau on Github"
+[website]: https://sprioleau.dev "San'Quan Prioleau's personal website"
+[linkedin]: https://www.linkedin.com/in/sanquanprioleau/
+[headshot_url]: https://avatars.githubusercontent.com/u/49278940?v=4 "San'Quan Prioleau headshot"
+
+<!-- Project Details -->
+[deployed-url]: https://entitease.vercel.app
+[social-card-url]: https://entitease.vercel.app/social-card_1200x630px.png "Social Card"
+[homepage-screenshot-url]: https://entitease.vercel.app/homepage.png "Homepage Screenshot"
+[symbol-page-screenshot-url]: https://entitease.vercel.app/symbol-page.png "Symbol Page Screenshot"
