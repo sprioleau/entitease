@@ -2,6 +2,20 @@
 	"name": "entitease",
 	"version": "0.1.0",
 	"private": true,
+	"description": "A stylish, statically generated HTML entity lookup.",
+	"author": "San'Quan Prioleau <sq.prioleau@gmail.com>",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/sprioleau/entitease.git"
+	},
+	"keywords": [
+		"HTML",
+		"entity",
+		"entities",
+		"symbols"
+	],
+	"contributors": [],
+	"homepage": "https://entitease.vercel.app",
 	"scripts": {
 		"dev": "next dev",
 		"build": "next build",
