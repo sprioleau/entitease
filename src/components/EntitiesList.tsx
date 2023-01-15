@@ -31,16 +31,12 @@ const EntitiesList = () => {
 			(entityGroup) => entityGroup.categoryLabel === categoryFilter
 		));
 
-		console.log("filteredEntitiesGroup:", filteredEntitiesGroup);
-
 		const filteredEntitiesBySearchQuery = filteredEntitiesGroup.map((entityGroup) => ({
 			categoryLabel: entityGroup.categoryLabel,
 			entities: filterEntityBySearchQuery(entityGroup.entities, searchQuery),
 		}));
 
 		entities = filteredEntitiesBySearchQuery;
-
-		console.log("filteredEntitiesBySearchQuery:", filteredEntitiesBySearchQuery);
 	} else {
 		entities = entitiesList
 			.filter((entityGroup) =>
@@ -96,8 +92,7 @@ const EntitiesList = () => {
 						</h3>
 						<span
 							className={composeClasses(arrowIconClasses)}
-							onClick={() => handleFilterByCategory(entityGroup.categoryLabel)}
-						>
+							onClick={() => handleFilterByCategory(entityGroup.categoryLabel)}>
 							<ArrowIcon />
 						</span>
 					</li>

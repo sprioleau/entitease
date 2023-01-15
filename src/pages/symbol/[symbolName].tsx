@@ -133,11 +133,9 @@ const SymbolDetail = ({ entity }: any) => (
 		</div>
 		<div className="symbol-detail__back">
 			<Link href="/">
-				<a>
-					<span className="symbol-detail__back-arrow">
-						<OutlinedArrowIcon />
-					</span>
-				</a>
+				<span className="symbol-detail__back-arrow">
+					<OutlinedArrowIcon />
+				</span>
 			</Link>
 		</div>
 	</div>

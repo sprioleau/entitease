@@ -13,8 +13,9 @@ export const filterEntityBySearchQuery = (entitiesList: any, searchQuery: string
 			convertToMatchString(entity.unicode).includes(convertToMatchString(searchQuery))
 	);
 
-export const isInSearchQuery = (property: string, searchQuery: string): boolean =>
-	convertToMatchString(property).includes(convertToMatchString(searchQuery));
+export const isInSearchQuery = (property: string, searchQuery: string): boolean => {
+	return convertToMatchString(property).includes(convertToMatchString(searchQuery));
+};
 
 export const composeClasses = (classesObject: {}) => {
 	const classList = Object.entries(classesObject);

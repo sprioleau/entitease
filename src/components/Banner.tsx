@@ -6,12 +6,10 @@ const Banner = () => {
 	return (
 		<div className="banner">
 			<Link href="/">
-				<a>
-					<span className="banner__logo">
-						<Logo />
-					</span>
-					<h1 className="banner__page-title">EntitEase</h1>
-				</a>
+				<span className="banner__logo">
+					<Logo />
+				</span>
+				<h1 className="banner__page-title">EntitEase</h1>
 			</Link>
 		</div>
 	);

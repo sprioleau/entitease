@@ -20,8 +20,8 @@ const Icon: React.FC<PropTypes> = ({ icon, addClass, link, to, size }): any => {
 	const embeddedIcon = <span className={composeClasses(iconClasses)}>{icon}</span>;
 
 	return link ? (
-		<Link href={to}>
-			<a className={`${addClass}-link`}>{embeddedIcon}</a>
+		<Link href={to} className={`${addClass}-link`}>
+			{embeddedIcon}
 		</Link>
 	) : (
 		{ embeddedIcon }
@@ -48,8 +48,7 @@ export const ArrowIcon = () => (
 		viewBox="0 0 215.27 215.27"
 		width="100%"
 		height="100%"
-		className="icon arrow-icon"
-	>
+		className="icon arrow-icon">
 		<path d="M215.27,0V215.27H165.12V85.61L38,212.73,2.54,177.27,129.66,50.15H0V0Z" fill="#f5bf16" />
 	</svg>
 );
