@@ -11,7 +11,7 @@ const reducer = (state = initialState, action: any) => {
 		case constants.TOGGLE_MODAL_VISIBILITY:
 			const existingModalContent = state.modalContent !== null;
 
-			let newModalContent: {} | null = {};
+			let newModalContent = null;
 			if (!existingModalContent || action.modalContent) newModalContent = action.modalContent;
 			if (existingModalContent && action.modalContent === null) newModalContent = null;
 

@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export interface Entity {
 	symbol: string;
 	entity: string;
@@ -24,6 +26,6 @@ export interface EntityDisplayValueTypes {
 }
 
 export interface StateType {
-	modalContent: {} | null;
+	modalContent: ReactNode | null;
 	searchQuery: string;
 }
