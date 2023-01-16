@@ -1,10 +1,9 @@
-import { useSelector } from "react-redux";
-import { selectModalContent } from "../state-provider/selectors";
+import useStore from "@/store";
 
 const ModalTarget = () => {
-	const modalContent = useSelector(selectModalContent);
+	const modalContent = useStore((s) => s.modalContent);
 
-	if (!Boolean(modalContent)) return null;
+	if (!modalContent) return null;
 
 	return <div className="modal">{modalContent}</div>;
 };

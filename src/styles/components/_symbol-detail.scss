@@ -30,9 +30,9 @@
 
 		&-mark {
 			font-family: $roboto;
-			font-size: calc(25vw + 8rem);
+			font-size: calc(25vw + 5rem);
 			line-height: 0.8;
-			margin: 2rem 0 0;
+			margin: 0;
 
 			// &:hover {
 			// 	cursor: copy;
@@ -47,8 +47,9 @@
 
 	&__key {
 		font-size: calc(0.8vw + 2rem);
-		padding: 0.25rem 1rem;
-		margin-bottom: 0.25rem;
+		padding: 0 0.25em;
+		line-height: 1.25;
+		margin-bottom: 0.125em;
 
 		&:hover {
 			// cursor: copy;
@@ -57,7 +58,8 @@
 	}
 
 	&__label {
-		font-size: 1rem;
+		font-size: 0.9em;
+		margin: 0;
 	}
 
 	&__entity {

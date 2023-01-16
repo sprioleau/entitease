@@ -19,7 +19,7 @@
 			@include transition(transform);
 			position: absolute;
 			content: "";
-			height: 0.25rem;
+			height: 0.125em;
 			width: 100%;
 			background-color: $yellow;
 			left: 50%;
@@ -37,7 +37,6 @@
 	&__links {
 		@include center;
 		flex-direction: column;
-		margin-bottom: 2rem;
 	}
 
 	&__byline {

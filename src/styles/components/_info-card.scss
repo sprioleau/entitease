@@ -1,14 +1,20 @@
 .info-card {
 	@include border;
 	@include shadow;
-	max-width: 550px;
-	background-color: $black;
-	padding: 1.5rem 3rem;
 	display: grid;
 	place-items: center;
 	text-align: center;
+	max-width: 450px;
+	background-color: $black;
 	margin: 2rem;
 	z-index: 10;
+
+	&__message {
+		font-size: 1.5rem;
+		padding: 1em;
+		line-height: 1.25;
+		margin: 0;
+	}
 }
 
 // .copy {

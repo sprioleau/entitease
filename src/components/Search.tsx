@@ -1,19 +1,17 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { SearchIcon, ClearIcon } from "../components/Icon";
-import { updateSearchQuery } from "../state-provider/actionCreators";
-import { selectSearchQuery } from "../state-provider/selectors";
+import useStore from "@/store";
 
 const Search = () => {
-	const dispatch = useDispatch();
-	const searchQuery = useSelector(selectSearchQuery);
+	const searchQuery = useStore((s) => s.searchQuery);
+	const updateSearchQuery = useStore((s) => s.updateSearchQuery);
 
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-		dispatch(updateSearchQuery(e.target.value));
+		updateSearchQuery(e.target.value);
 	};
 
 	const handleClearSearch = () => {
-		dispatch(updateSearchQuery(""));
+		updateSearchQuery("");
 	};
 
 	return (

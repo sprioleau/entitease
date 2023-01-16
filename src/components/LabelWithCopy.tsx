@@ -1,11 +1,7 @@
-// import useClipboard from "react-use-clipboard";
-import { toggleModalVisibility } from "../state-provider/actionCreators";
-import { useDispatch } from "react-redux";
 import InfoCard from "./InfoCard";
 import { composeClasses } from "../utilities/utilityFunctions";
 import { useState } from "react";
-
-// https://stackoverflow.com/questions/55969769/typing-a-dynamic-tag-in-react-with-typescript
+import useStore from "@/store";
 
 interface PropTypes {
 	[key: string]: any;
@@ -26,14 +22,13 @@ interface ListItemClassesTypes {
 
 const LabelWithCopy: React.FC<PropTypes> = ({ label, tag, className, addClass, textToCopy, copy, blank }) => {
 	const [isCopied, setIsCopied] = useState(textToCopy);
-	// const [isCopied, setCopied] = useClipboard(textToCopy);
-	const dispatch = useDispatch();
+	const updateModalContent = useStore((s) => s.updateModalContent);
 
 	const handleCopy = () => {
 		if (!copy) return null;
 		navigator.clipboard.writeText(textToCopy);
 		setIsCopied("");
-		dispatch(toggleModalVisibility(<InfoCard textToCopy={textToCopy} isCopied={isCopied} />));
+		updateModalContent(<InfoCard textToCopy={textToCopy} isCopied={isCopied} />);
 	};
 
 	const CustomTag: any = `${tag}`;

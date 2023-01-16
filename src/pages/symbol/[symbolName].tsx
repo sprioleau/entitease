@@ -1,6 +1,4 @@
 import Link from "next/link";
-import { Provider } from "react-redux";
-import store from "../../state-provider/store";
 import { useRouter } from "next/router";
 import { dashString } from "../../utilities/utilityFunctions";
 import LabelWithCopy from "../../components/LabelWithCopy";
@@ -23,20 +21,18 @@ const Symbol = () => {
 		.find((entity) => dashString(entity.name) === symbolName);
 
 	return (
-		<Provider store={store}>
-			<div className="app">
-				<HeadContent customTitle={entity.name} />
+		<div className="app">
+			<HeadContent customTitle={entity.name} />
 
-				<ModalTarget />
+			<ModalTarget />
 
-				<main className="main-content no-search">
-					<Banner />
-					<Instructions />
-					<Footer />
-					<SymbolDetail entity={entity} />
-				</main>
-			</div>
-		</Provider>
+			<main className="main-content no-search">
+				<Banner />
+				<Instructions />
+				<Footer />
+				<SymbolDetail entity={entity} />
+			</main>
+		</div>
 	);
 };
 

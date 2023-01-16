@@ -3,14 +3,7 @@ import React from "react";
 const Footer = () => {
 	return (
 		<div className="footer">
-			<ul className="footer__links">
-				<li className="footer__link">
-					<a href="https://github.com/sprioleau/entitease">source →</a>
-				</li>
-				{/* <li className="footer__link">
-					<a href="https://github.com/sprioleau">about →</a>
-				</li> */}
-			</ul>
+			<ul className="footer__links"></ul>
 			<div className="footer__byline">
 				<span className="footer__emoji">👨🏾&zwj;💻</span>
 				<span className="footer__created-by">
@@ -20,6 +13,9 @@ const Footer = () => {
 					</a>
 				</span>
 			</div>
+			<li className="footer__link">
+				<a href="https://github.com/sprioleau/entitease">source →</a>
+			</li>
 		</div>
 	);
 };

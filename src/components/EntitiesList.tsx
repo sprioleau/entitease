@@ -9,13 +9,12 @@ import {
 	isInSearchQuery,
 } from "../utilities/utilityFunctions";
 import Icon, { ArrowIcon } from "./Icon";
-import { useSelector } from "react-redux";
-import { selectSearchQuery } from "../state-provider/selectors";
 import { EntitityCategory } from "../types/types";
 import { entitiesList } from "../utilities/entitiesList";
+import useStore from "@/store";
 
 const EntitiesList = () => {
-	const searchQuery = useSelector(selectSearchQuery);
+	const searchQuery = useStore((s) => s.searchQuery);
 	const searchQueryMatchString = convertToMatchString(searchQuery);
 	const [categoryFilter, setCategoryFilter] = useState("");
 	const [filterActive, setFilterActive] = useState(false);
