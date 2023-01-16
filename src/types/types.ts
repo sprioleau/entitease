@@ -6,7 +6,6 @@ export interface Entity {
 	unicode: string;
 	name: string;
 	blank?: boolean;
-	[key: string]: string | boolean | undefined;
 }
 
 export interface EntitityCategory {
