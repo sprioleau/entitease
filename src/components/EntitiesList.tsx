@@ -102,11 +102,11 @@ const EntitiesList = () => {
 									{Object.keys(entityDisplayValues).map((key) => (
 										<LabelWithCopy
 											key={key}
-											label={`${entityDisplayValues[key].label}${entity[key]}`}
+											label={`${entityDisplayValues[key].label}${entity[key as keyof typeof entity]}`}
 											tag={entityDisplayValues[key].tag}
 											className="entities-list__item-label"
 											addClass={entityDisplayValues[key].addClass}
-											textToCopy={entity[key]}
+											textToCopy={entity[key as keyof typeof entity]}
 											copy={entityDisplayValues[key].copy}
 											blank={entity.blank}
 										/>

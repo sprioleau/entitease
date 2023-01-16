@@ -1,17 +1,21 @@
-import React from "react";
+import React, { useRef } from "react";
+import { useDebounceCallback } from "@react-hook/debounce";
 import { SearchIcon, ClearIcon } from "../components/Icon";
 import useStore from "@/store";
 
 const Search = () => {
-	const searchQuery = useStore((s) => s.searchQuery);
 	const updateSearchQuery = useStore((s) => s.updateSearchQuery);
+	const searchQueryRef = useRef<HTMLInputElement>(null);
+
+	const debouncedCallback = useDebounceCallback(() => updateSearchQuery(searchQueryRef?.current?.value ?? ""), 150);
 
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-		updateSearchQuery(e.target.value);
+		debouncedCallback();
 	};
 
 	const handleClearSearch = () => {
 		updateSearchQuery("");
+		if (searchQueryRef.current) searchQueryRef.current.value = "";
 	};
 
 	return (
@@ -23,7 +27,7 @@ const Search = () => {
 				<ClearIcon />
 			</span>
 			<div className="search__input-wrapper">
-				<input className="search__input" type="text" value={searchQuery} autoFocus={false} onChange={handleChange} />
+				<input ref={searchQueryRef} className="search__input" type="text" autoFocus={false} onChange={handleChange} />
 			</div>
 		</div>
 	);
