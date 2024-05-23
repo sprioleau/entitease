@@ -1,86 +1,36 @@
-![Social Card][social-card-url]
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-![Vercel Status](https://img.shields.io/github/deployments/sprioleau/entitease/production?label=vercel&logo=vercel&style=for-the-badge)
+## Getting Started
 
-# Entitease
-
-A stylish, statically generated HTML entity lookup. See the entities alongside their corresponding HTML and CSS code for reference. Copy any symbol or reference code with a click or tap.
-
-## 🔗 Links
-
-- 🚀 Deployed at [entitease.vercel.app][deployed-url]
-
-## Screenshots
-
-![Homepage Screenshot][homepage-screenshot-url] 
-
-![Symbol Page Screenshot][symbol-page-screenshot-url] 
-
-_Screenshots via [Pretty Page](https://prettypage.vercel.app/)_
-
-## 💿 Installation
-
-Clone this repo
+First, run the development server:
 
 ```bash
-git clone https://github.com/sprioleau/entitease.git
-```
-
-Install via yarn
-
-```bash
-yarn install
-```
-
-Run developemnt server
-
-```bash
+npm run dev
+# or
 yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-## 🛠 Built With
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-| Technology            | Used For                          |
-| :-------------------- | :-------------------------------- |
-| TypeScript            | -                                 |
-| Next.js               | Static site generation            |
-| Vercel                | Hosting                           |
-| Redux                 | State management                  |
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-## ✨ Features
-- [x] Search by entity name or group
-- [x] Copy entity codes with a click or tap
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## ⬆️ Future Updates
+## Learn More
 
-- [ ] Improve robustness of search with fuzzy matching
+To learn more about Next.js, take a look at the following resources:
 
-## 👨🏾‍💻 Author
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-**San'Quan Prioleau**
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-- [Profile][github-url]
-- [Website][website]
-- [LinkedIn][linkedin]
+## Deploy on Vercel
 
-## 🎗 Support
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Issues, and feature requests are welcome!
-
-Give a ⭐️ if you like this project!
-
-## Acknowledgements
-
-- [HTML Entity List](https://dev.w3.org/html5/html-author/charref)
-
-<!-- Author Details -->
-[github-url]: https://github.com/spriolau "San'Quan Prioleau on Github"
-[website]: https://sprioleau.dev "San'Quan Prioleau's personal website"
-[linkedin]: https://www.linkedin.com/in/sanquanprioleau/
-[headshot_url]: https://avatars.githubusercontent.com/u/49278940?v=4 "San'Quan Prioleau headshot"
-
-<!-- Project Details -->
-[deployed-url]: https://entitease.vercel.app
-[social-card-url]: https://entitease.vercel.app/social-card_1200x630px.png "Social Card"
-[homepage-screenshot-url]: https://entitease.vercel.app/homepage.png "Homepage Screenshot"
-[symbol-page-screenshot-url]: https://entitease.vercel.app/symbol-page.png "Symbol Page Screenshot"
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
