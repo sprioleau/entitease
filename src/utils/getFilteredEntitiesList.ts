@@ -11,12 +11,12 @@ export default function getFilteredEntitiesList({
 }: {
 	query: string;
 	isFilterActive: boolean;
-	categoryFilter: string;
+	categoryFilter: string | undefined;
 }) {
 	let fileteredEntities: EntitityCategory[] = [];
 	const searchQueryMatchString = convertToMatchString(query);
 
-	if (query.length === 0 && categoryFilter.length === 0) {
+	if (query.length === 0 && categoryFilter?.length === 0) {
 		fileteredEntities = entitiesList;
 	} else if (query.length === 0 && isFilterActive) {
 		fileteredEntities = entitiesList.filter((entityGroup) => entityGroup.categoryLabel === categoryFilter);
