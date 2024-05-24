@@ -1,8 +1,7 @@
-import React from "react";
 import Link from "next/link";
 import { Logo } from "../Icon";
 
-const Banner = () => {
+export default function Banner() {
 	return (
 		<div className="banner">
 			<Link href="/">
@@ -13,6 +12,4 @@ const Banner = () => {
 			</Link>
 		</div>
 	);
-};
-
-export default Banner;
+}
