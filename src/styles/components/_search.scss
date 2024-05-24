@@ -39,6 +39,13 @@
 		appearance: none;
 		border: none;
 
+		@include hover-wrapper {
+			&:hover {
+				cursor: url("/images/cursor@1x.svg") 4 4, auto;
+				cursor: -webkit-image-set(url("/images/cursor@2x.svg") 2x) 4 4, auto;
+			}
+		}
+
 		&:focus {
 			outline: none;
 		}

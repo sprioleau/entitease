@@ -11,8 +11,11 @@
 	z-index: 10;
 }
 
-// .copy {
-// 	&:hover {
-// 		cursor: pointer;
-// 	}
-// }
+.copy {
+	@include hover-wrapper {
+		&:hover {
+			cursor: url("/images/pointer@1x.svg") 4 4, auto;
+			cursor: -webkit-image-set(url("/images/pointer@2x.svg") 2x) 4 4, auto;
+		}
+	}
+}

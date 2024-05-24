@@ -36,9 +36,15 @@
 
 		&-icon {
 			@include transition;
+			@include hover-wrapper {
+				&:hover {
+					cursor: url("/images/pointer@1x.svg") 4 4, auto;
+					cursor: -webkit-image-set(url("/images/pointer@2x.svg") 2x) 4 4, auto;
+				}
+			}
+
 			align-self: flex-end;
 			margin: 2rem;
-			cursor: url("../../images/pointer.svg"), auto;
 
 			svg {
 				transform: rotate(45deg);
@@ -112,9 +118,12 @@
 		font-size: 0.9rem;
 		line-height: 1.2;
 
-		// &:hover {
-		// 	cursor: copy;
-		// }
+		@include hover-wrapper {
+			&:hover {
+				cursor: url("/images/copy@1x.svg") 4 4, auto;
+				cursor: -webkit-image-set(url("/images/copy@2x.svg") 2x) 4 4, auto;
+			}
+		}
 
 		&:not(.symbol):hover {
 			background-color: rgba($black, 0.8);
@@ -127,7 +136,13 @@
 		}
 
 		&:not(.copy):hover {
-			// cursor: default;
+			@include hover-wrapper {
+				&:hover {
+					cursor: url("/images/cursor@1x.svg") 4 4, auto;
+					cursor: -webkit-image-set(url("/images/cursor@2x.svg") 2x) 4 4, auto;
+				}
+			}
+
 			background-color: transparent;
 			color: currentColor;
 		}

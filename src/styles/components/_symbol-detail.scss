@@ -34,9 +34,12 @@
 			line-height: 0.8;
 			margin: 2rem 0 0;
 
-			// &:hover {
-			// 	cursor: copy;
-			// }
+			@include hover-wrapper {
+				&:hover {
+					cursor: url("/images/pointer@1x.svg") 4 4, auto;
+					cursor: -webkit-image-set(url("/images/pointer@2x.svg") 2x) 4 4, auto;
+				}
+			}
 		}
 
 		.name {
@@ -51,7 +54,8 @@
 		margin-bottom: 0.25rem;
 
 		&:hover {
-			// cursor: copy;
+			cursor: url("/images/pointer@1x.svg") 4 4, auto;
+			cursor: -webkit-image-set(url("/images/pointer@2x.svg") 2x) 4 4, auto;
 			background-color: darken($black, 10%);
 		}
 	}

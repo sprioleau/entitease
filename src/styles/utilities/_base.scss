@@ -32,21 +32,22 @@ li {
 	width: 100%;
 	height: 100%;
 	overflow-x: visible;
-	cursor: url("../../images/cursor.svg"), auto;
+	cursor: url("/images/cursor@1x.svg") 4 4, auto;
+	cursor: -webkit-image-set(url("/images/cursor@2x.svg") 2x) 4 4, auto;
 
 	a {
-		cursor: url("../../images/pointer.svg"), auto;
-
 		@include hover-wrapper {
 			&:hover {
-				cursor: url("../../images/pointer.svg"), auto;
+				cursor: url("/images/pointer@1x.svg") 4 4, auto;
+				cursor: -webkit-image-set(url("/images/pointer@2x.svg") 2x) 4 4, auto;
 			}
 		}
 	}
 
 	@include hover-wrapper {
 		.copy:hover {
-			cursor: url("../../images/copy.svg"), auto;
+			cursor: url("/images/copy@1x.svg") 4 4, auto;
+			cursor: -webkit-image-set(url("/images/copy@2x.svg") 2x) 4 4, auto;
 		}
 	}
 }
