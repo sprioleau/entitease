@@ -1,0 +1,3 @@
+- [ ] Add current filter to URL search params; reference Hamed Bahram video
+- [ ] Add modal/dialog/toast to indicate when something was copied
+- [ ] Use `button` and `a` tags for interactive elements
