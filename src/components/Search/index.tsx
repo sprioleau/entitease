@@ -3,33 +3,34 @@
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import React from "react";
 import { useDebouncedCallback } from "use-debounce";
-import { ClearIcon, SearchIcon } from "../Icon";
+import { SearchIcon } from "../Icon";
 
 export default function Search() {
 	const searchParams = useSearchParams();
 	const pathname = usePathname();
 	const { replace } = useRouter();
-	const searchInputRef = React.useRef<HTMLInputElement>(null);
+	const params = new URLSearchParams(searchParams);
 
-	const handleSearch = useDebouncedCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-		const searchTerm = e.target.value;
-
-		const params = new URLSearchParams(searchParams);
-		if (searchTerm) {
+	function handleSearch(searchTerm: string) {
+		if (searchTerm.length > 0) {
 			params.set("query", searchTerm);
 		} else {
 			params.delete("query");
 		}
 
 		replace(`${pathname}?${params.toString()}`);
-	}, 300);
+	}
 
-	function handleClearSearch() {
-		replace(pathname);
+	const debouncedHandleSearch = useDebouncedCallback(handleSearch, 300);
 
-		if (searchInputRef.current) {
-			searchInputRef.current.value = "";
+	function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
+		const searchTerm = event.target.value;
+
+		if (searchTerm.length === 0) {
+			return handleSearch(searchTerm);
 		}
+
+		return debouncedHandleSearch(searchTerm);
 	}
 
 	return (
@@ -37,21 +38,12 @@ export default function Search() {
 			<span className="search__icon search">
 				<SearchIcon />
 			</span>
-			{searchInputRef.current && searchInputRef.current.value.length > 0 && (
-				<span
-					className="search__icon clear"
-					onClick={handleClearSearch}
-				>
-					<ClearIcon />
-				</span>
-			)}
 			<div className="search__input-wrapper">
 				<input
-					ref={searchInputRef}
 					className="search__input"
-					type="text"
+					type="search"
 					autoFocus={false}
-					onChange={handleSearch}
+					onChange={handleChange}
 					defaultValue={searchParams.get("query")?.toString()}
 				/>
 			</div>
