@@ -1,5 +1,6 @@
 "use client";
 
+import useToast from "@/hooks/useToast";
 import composeClasses from "@/utils/composeClasses";
 
 type Props = {
@@ -12,9 +13,12 @@ type Props = {
 };
 
 export default function LabelWithCopy({ label, tag, className = "", addClass = "", textToCopy, isBlank }: Props) {
+	const { toast } = useToast();
+
 	function handleCopy() {
 		if (!textToCopy) return;
 		navigator.clipboard.writeText(textToCopy);
+		toast(`Copied ${textToCopy}`);
 	}
 
 	const CustomTag: keyof JSX.IntrinsicElements = `${tag}`;
