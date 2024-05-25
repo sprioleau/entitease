@@ -29,17 +29,12 @@
 		overflow-y: scroll;
 
 		&-mark {
+			@include cursor-pointer;
+
 			font-family: $roboto;
 			font-size: calc(25vw + 8rem);
 			line-height: 0.8;
 			margin: 2rem 0 0;
-
-			@include hover-wrapper {
-				&:hover {
-					cursor: url("/images/pointer@1x.svg") 4 4, auto;
-					cursor: -webkit-image-set(url("/images/pointer@2x.svg") 2x) 4 4, auto;
-				}
-			}
 		}
 
 		.name {
@@ -49,15 +44,11 @@
 	}
 
 	&__key {
+		@include cursor-pointer;
+
 		font-size: calc(0.8vw + 2rem);
 		padding: 0.25rem 1rem;
 		margin-bottom: 0.25rem;
-
-		&:hover {
-			cursor: url("/images/pointer@1x.svg") 4 4, auto;
-			cursor: -webkit-image-set(url("/images/pointer@2x.svg") 2x) 4 4, auto;
-			background-color: darken($black, 10%);
-		}
 	}
 
 	&__label {

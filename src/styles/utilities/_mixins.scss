@@ -63,3 +63,30 @@ $border-outline-width: 0.5rem;
 		@content;
 	}
 }
+
+@mixin cursor-cursor {
+	@include hover-wrapper {
+		&:hover {
+			cursor: url("/images/cursors/cursor@1x.svg") 4 4, auto;
+			cursor: -webkit-image-set(url("/images/cursors/cursor@2x.svg") 2x) 4 4, auto;
+		}
+	}
+}
+
+@mixin cursor-pointer {
+	@include hover-wrapper {
+		&:hover {
+			cursor: url("/images/cursors/pointer@1x.svg") 4 4, auto;
+			cursor: -webkit-image-set(url("/images/cursors/pointer@2x.svg") 2x) 4 4, auto;
+		}
+	}
+}
+
+@mixin cursor-copy {
+	@include hover-wrapper {
+		&:hover {
+			cursor: url("/images/cursors/copy@1x.svg") 4 4, auto;
+			cursor: -webkit-image-set(url("/images/cursors/copy@2x.svg") 2x) 4 4, auto;
+		}
+	}
+}
