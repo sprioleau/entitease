@@ -1,0 +1,23 @@
+.toast {
+	position: fixed;
+	top: calc(4rem + var(--border-outline-width));
+	left: 50%;
+	transform: translateX(-50%);
+	padding: 0.75em 1em;
+	animation: slide-in 0.25s ease-out forwards;
+	background-color: var(--color-green-dark-05);
+	border: var(--border-outline-width) solid var(--color-yellow);
+	font-size: 1.5rem;
+	z-index: 1;
+}
+
+@keyframes slide-in {
+	from {
+		opacity: 0;
+		transform: translateX(-50%) translateY(-35px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(-50%) translateY(0);
+	}
+}

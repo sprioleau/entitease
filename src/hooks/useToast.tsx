@@ -1,6 +1,6 @@
 "use client";
 
-import Toast from "@/components/Toast";
+import ToastContainer from "@/components/ToastContainer";
 import { createContext, useContext, useEffect, useState } from "react";
 
 const ToastContext = createContext<{ toast: (message: string) => void; message: string | undefined }>({
@@ -8,14 +8,18 @@ const ToastContext = createContext<{ toast: (message: string) => void; message: 
 	message: undefined,
 });
 
-export function ToastProvider({ children }: any) {
+type ToastProviderProps = {
+	children: React.ReactNode;
+	duration?: number;
+};
+
+export function ToastProvider({ children, duration = 2500 }: ToastProviderProps) {
 	const [message, setMessage] = useState<string | undefined>();
 
 	useEffect(() => {
-		const timeout = setTimeout(() => setMessage(undefined), 2500);
-
+		const timeout = setTimeout(() => setMessage(undefined), duration);
 		return () => clearTimeout(timeout);
-	}, [message]);
+	}, [message, duration]);
 
 	function toast(message: string) {
 		setMessage(message);
@@ -29,7 +33,7 @@ export function ToastProvider({ children }: any) {
 			}}
 		>
 			{children}
-			{message && <Toast message={message} />}
+			<ToastContainer />
 		</ToastContext.Provider>
 	);
 }
