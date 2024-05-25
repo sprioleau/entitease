@@ -5,33 +5,39 @@ import { EntitityCategory } from "@/types/types";
 import composeClasses from "@/utils/composeClasses";
 import dashString from "@/utils/dashString";
 import getFilteredEntitiesList from "@/utils/getFilteredEntitiesList";
-import React, { useMemo, useState } from "react";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import React, { useMemo } from "react";
 import Icon, { ArrowIcon } from "../Icon";
 import LabelWithCopy from "../LabelWithCopy";
 
 type Props = {
 	query: string;
+	category: string;
 };
 
-export default function EntitiesList({ query }: Props) {
-	const [categoryFilter, setCategoryFilter] = useState<string | undefined>();
+export default function EntitiesList({ query, category }: Props) {
+	const searchParams = useSearchParams();
+	const params = new URLSearchParams(searchParams);
+	const pathname = usePathname();
+	const { replace } = useRouter();
 
-	const isFilterActive = Boolean(categoryFilter);
+	const isFilterActive = Boolean(category);
 
 	const filteredEntities = useMemo(() => {
 		return getFilteredEntitiesList({
 			query,
-			isFilterActive,
-			categoryFilter,
+			category,
 		});
-	}, [query, isFilterActive, categoryFilter]);
+	}, [query, category]);
 
 	function handleFilterByCategory(categoryLabel: string) {
-		if (!isFilterActive) {
-			setCategoryFilter(categoryLabel);
+		if (category !== categoryLabel) {
+			params.set("category", categoryLabel);
 		} else {
-			setCategoryFilter(undefined);
+			params.delete("category");
 		}
+
+		replace(`${pathname}?${params.toString()}`);
 	}
 
 	const arrowIconClasses = {

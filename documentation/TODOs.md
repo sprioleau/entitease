@@ -1,5 +1,5 @@
-- [ ] Add current filter to URL search params; reference Hamed Bahram video
 - [x] Add modal/dialog/toast to indicate when something was copied
-- [ ] Use `button` and `a` tags for interactive elements
 - [x] Restore 5% darken color for symbol cards
 - [x] Use CSS custom properties for colors
+- [x] Add current filter to URL search params
+- [ ] Use `button` and `a` tags for interactive elements

@@ -10,11 +10,9 @@ export default async function Home({
 }: {
 	searchParams?: {
 		query?: string;
-		page?: string;
+		category?: string;
 	};
 }) {
-	const query = searchParams?.query || "";
-
 	return (
 		<main className="main-content">
 			<Banner />
@@ -22,7 +20,10 @@ export default async function Home({
 			<Instructions />
 			<Footer />
 			<ToastProvider>
-				<EntitiesList query={query} />
+				<EntitiesList
+					query={searchParams?.query ?? ""}
+					category={searchParams?.category ?? ""}
+				/>
 			</ToastProvider>
 		</main>
 	);
