@@ -4,8 +4,6 @@ $bp-small: 670px;
 $bp-medium: 850px;
 $bp-large: 1180px;
 
-$border-outline-width: 0.5rem;
-
 @mixin center {
 	display: flex;
 	justify-content: center;
@@ -47,16 +45,16 @@ $border-outline-width: 0.5rem;
 }
 
 @mixin outline {
-	outline: $border-outline-width solid $yellow;
+	outline: var(--border-outline-width) solid var(--color-yellow);
 }
 
 @mixin border {
-	border: $border-outline-width solid $yellow;
+	border: var(--border-outline-width) solid var(--color-yellow);
 }
 
-@mixin shadow($color: $black) {
-	box-shadow: 1.25rem 1.25rem 0 0 rgba(darken($color, 10%), 0.4);
-}
+// @mixin shadow($color: var(--color-green)) {
+// 	box-shadow: 1.25rem 1.25rem 0 0 rgba(darken($color, 10%), 0.4);
+// }
 
 @mixin hover-wrapper {
 	@media (hover: hover) {

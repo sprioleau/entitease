@@ -1,15 +1,12 @@
-// https://coolors.co/264653-2a9d8f-e9c46a-f4a261-e76f51
-$charcoal: #264653;
-$persian-green: #2a9d8f;
-$orange-yellow-crayola: #e9c46a;
-$sandy-brown: #f4a261;
-$burnt-sienna: #ec6745;
+:root {
+	--color-green: #264653;
+	--color-green-rgb: 38, 70, 83;
+	--color-green-light: #3e7287;
+	--color-green-dark-05: #1e3742;
+	--color-green-dark-10: #162830;
+	--color-yellow: #f5bf16;
+	--color-white: #fff;
 
-$black: $charcoal;
-$green: $persian-green;
-$yellow: #f5bf16;
-$orange-light: $sandy-brown;
-$orange: $burnt-sienna;
-
-$grid-gap: 1.5rem;
-$footer-height: calc(5vw + 15rem);
+	--footer-height: calc(5vw + 15rem);
+	--border-outline-width: 0.5rem;
+}

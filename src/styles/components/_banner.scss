@@ -2,7 +2,7 @@
 	@include center;
 	grid-area: banner;
 	flex-direction: column;
-	background-image: url("../../images/bg.svg");
+	background-image: url("/images/bg.svg");
 	overflow: hidden;
 
 	&:hover {
@@ -21,7 +21,7 @@
 		height: 100%;
 		width: 100%;
 		text-decoration: none;
-		color: $yellow;
+		color: var(--color-yellow);
 		padding: 1rem;
 
 		span {
@@ -58,10 +58,6 @@
 	.banner {
 		&__page-title {
 			display: none;
-			// writing-mode: horizontal-tb;
-			// transform: rotate(0);
-			// font-size: 1.8rem;
-			// line-height: 1;
 		}
 
 		&:hover .banner__page-title {

@@ -5,14 +5,14 @@
 	overflow-x: hidden;
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-	gap: $border-outline-width;
+	gap: var(--border-outline-width);
 	z-index: 1;
 
 	&.no-results {
 		.no-results-message {
 			font-size: 1.5rem;
 			padding: 2rem;
-			background-color: $black;
+			background-color: var(--color-green);
 			text-align: center;
 			margin: 0;
 		}
@@ -23,7 +23,7 @@
 		flex-direction: column;
 		align-items: flex-start;
 		justify-content: space-between;
-		background-color: $black;
+		background-color: var(--color-green);
 
 		&-label {
 			font-size: 2rem;
@@ -62,11 +62,11 @@
 
 	&__item {
 		@include transition(background-color);
-		background-color: $black;
+		background-color: var(--color-green);
 		text-align: center;
 
 		&:hover {
-			background-color: darken($black, 5%);
+			background-color: var(--color-green-dark-05);
 		}
 
 		p {
@@ -83,10 +83,10 @@
 		left: 0;
 		width: 3rem;
 		height: 3rem;
-		background-color: $black;
+		background-color: var(--color-green);
 
 		&:hover {
-			background-color: darken($black, 10%);
+			background-color: var(--color-green-dark-10);
 		}
 
 		.arrow-icon-link {
@@ -116,8 +116,8 @@
 		line-height: 1.2;
 
 		&:not(.symbol):hover {
-			background-color: rgba($black, 0.8);
-			color: white;
+			background-color: rgba(var(--color-green-rgb), 0.8);
+			color: var(--color-white);
 		}
 
 		&.name {
@@ -138,7 +138,8 @@
 			height: 4rem;
 
 			&:hover {
-				background-color: $black;
+				background-color: var(--color-green);
+				color: var(--color-white);
 			}
 		}
 	}
@@ -159,14 +160,14 @@
 			grid-template-columns: 1fr 3rem;
 			grid-template-rows: 1fr;
 			grid-template-areas: "details navigation";
-			gap: $border-outline-width;
-			background-color: $yellow;
+			gap: var(--border-outline-width);
+			background-color: var(--color-yellow);
 			padding: 0;
 		}
 
 		&__labels {
 			grid-area: details;
-			background-color: $black;
+			background-color: var(--color-green);
 			padding: $padding 1rem;
 			height: calc(100% - 2 * #{$padding});
 		}
@@ -174,7 +175,7 @@
 		&__navigation {
 			position: relative;
 			grid-area: navigation;
-			background-color: $black;
+			background-color: var(--color-green);
 			outline: none;
 			height: 100%;
 		}

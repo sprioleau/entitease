@@ -4,16 +4,16 @@
 	overflow-y: scroll;
 	overflow-x: hidden;
 	grid-template-columns: repeat(3, 1fr);
-	grid-template-rows: 1fr 1fr $footer-height;
+	grid-template-rows: 1fr 1fr var(--footer-height);
 	grid-template-areas:
 		"symbol symbol entity   "
 		"symbol symbol unicode "
 		"html   css    back";
-	gap: $border-outline-width;
-	background-color: $yellow;
+	gap: var(--border-outline-width);
+	background-color: var(--color-yellow);
 
 	& > * {
-		background-color: $black;
+		background-color: var(--color-green);
 		@include center;
 		flex-direction: column;
 		text-align: center;
@@ -70,8 +70,8 @@
 	&__html,
 	&__css {
 		display: grid;
-		gap: $border-outline-width;
-		background-color: $yellow;
+		gap: var(--border-outline-width);
+		background-color: var(--color-yellow);
 		grid-template-rows: 1fr 1fr;
 		grid-template-columns: 1fr;
 		grid-template-areas:
@@ -92,7 +92,7 @@
 			height: 100%;
 
 			code {
-				background-color: darken($black, 10%);
+				background-color: var(--color-green-dark-10);
 				padding: 1rem;
 				margin: 1rem;
 				text-align: left;
@@ -105,13 +105,13 @@
 				line-height: 1.25;
 
 				&.comment {
-					color: lighten($black, 15%);
+					color: var(--color-green-light);
 				}
 			}
 		}
 
 		& > * {
-			background-color: $black;
+			background-color: var(--color-green);
 		}
 	}
 
@@ -123,7 +123,7 @@
 		grid-area: back;
 
 		&:hover {
-			background-color: darken($black, 10%);
+			background-color: var(--color-green-dark-10);
 		}
 
 		a {
@@ -145,7 +145,7 @@
 @include md {
 	.symbol-detail {
 		grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-		grid-template-rows: 2fr 1fr 1fr $footer-height;
+		grid-template-rows: 2fr 1fr 1fr var(--footer-height);
 		grid-template-areas:
 			"symbol symbol "
 			"entity unicode"

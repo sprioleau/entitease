@@ -1,8 +1,8 @@
 .info-card {
 	@include border;
-	@include shadow;
+	// @include shadow;
 	max-width: 550px;
-	background-color: $black;
+	background-color: var(--color-green);
 	padding: 1.5rem 3rem;
 	display: grid;
 	place-items: center;

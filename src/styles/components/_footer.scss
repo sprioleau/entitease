@@ -1,6 +1,6 @@
 .footer {
 	@include center;
-	background-image: url("../../images/bg.svg");
+	background-image: url("/images/bg.svg");
 	grid-area: footer;
 	flex-direction: column;
 	flex: 0 0;
@@ -8,7 +8,7 @@
 	font-family: $roboto;
 
 	a {
-		color: $yellow;
+		color: var(--color-yellow);
 		text-decoration: none;
 		margin-bottom: 0.5rem;
 		display: block;
@@ -21,7 +21,7 @@
 			content: "";
 			height: 0.25rem;
 			width: 100%;
-			background-color: $yellow;
+			background-color: var(--color-yellow);
 			left: 50%;
 			bottom: -0.25rem;
 			transform: translateX(-50%) scaleX(0);
@@ -55,9 +55,9 @@
 		justify-content: unset;
 		display: grid;
 		place-items: center;
-		gap: $border-outline-width;
+		gap: var(--border-outline-width);
 		grid-template-columns: repeat(2, 1fr);
-		background-color: $yellow;
+		background-color: var(--color-yellow);
 		padding: 0;
 
 		a,

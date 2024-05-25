@@ -3,18 +3,18 @@ body {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	background-color: $black;
+	background-color: var(--color-green);
 	overflow: hidden;
 }
 
 ::selection {
-	background-color: $yellow;
-	color: $black;
+	background-color: var(--color-yellow);
+	color: var(--color-green);
 }
 
 body {
 	font-family: $space;
-	color: $yellow;
+	color: var(--color-yellow);
 }
 
 ul,
@@ -43,13 +43,13 @@ li {
 // Layout
 .main-content {
 	@include border;
-	height: calc(100vh - 2 * #{$border-outline-width});
-	width: calc(100vw - 2 * #{$border-outline-width});
+	height: calc(100vh - 2 * #{var(--border-outline-width)});
+	width: calc(100vw - 2 * #{var(--border-outline-width)});
 	display: grid;
-	gap: $border-outline-width;
-	background-color: $yellow;
+	gap: var(--border-outline-width);
+	background-color: var(--color-yellow);
 	grid-template-columns: 10rem 1fr;
-	grid-template-rows: auto 1fr auto $footer-height;
+	grid-template-rows: auto 1fr auto var(--footer-height);
 	grid-template-areas:
 		"banner       search  "
 		"banner       entities"
@@ -57,7 +57,7 @@ li {
 		"footer       entities";
 
 	&.no-search {
-		grid-template-rows: 1fr auto $footer-height;
+		grid-template-rows: 1fr auto var(--footer-height);
 		grid-template-areas:
 			"banner       entities"
 			"instructions entities"
